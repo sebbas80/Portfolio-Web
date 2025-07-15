@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="1200" height="600">
+  <!-- Background -->
+  <rect width="1200" height="600" fill="#0a0a0a"/>
+  
+  <!-- Matrix effect -->
+  <g opacity="0.3">
+    <text x="50" y="50" font-family="monospace" font-size="12" fill="#00ff41">01010011 01100101 01100010 01100001 01110011 01110100 01101001 01100001 01101110</text>
+    <text x="50" y="550" font-family="monospace" font-size="12" fill="#00ffff">Security | SIEM | SOAR | Threat Hunting | Penetration Testing</text>
+  </g>
+  
+  <!-- Main content -->
+  <g transform="translate(600,300)">
+    <!-- Title with glow -->
+    <text x="0" y="-40" text-anchor="middle" font-family="monospace" font-size="42" font-weight="bold" fill="#00ffff">
+      SEBASTIAN LOPEZ
+    </text>
+    
+    <!-- Subtitle -->
+    <text x="0" y="0" text-anchor="middle" font-family="monospace" font-size="20" fill="#00ff41">
+      Cybersecurity Specialist
+    </text>
+    
+    <!-- Skills -->
+    <text x="0" y="40" text-anchor="middle" font-family="monospace" font-size="16" fill="#ffffff">
+      Web2 Pentesting (Sr) | Web3 Security (Jr) | Cloud Security Expert
+    </text>
+  </g>
+  
+  <!-- Decorative elements -->
+  <rect x="50" y="200" width="4" height="200" fill="#00ffff" opacity="0.6"/>
+  <rect x="1146" y="200" width="4" height="200" fill="#bf00ff" opacity="0.6"/>
+</svg>

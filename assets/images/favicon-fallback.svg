@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <!-- Background -->
+  <circle cx="16" cy="16" r="15" fill="#0a0a0a" stroke="#00ffff" stroke-width="1"/>
+  
+  <!-- Simplified Kali dragon head -->
+  <g transform="translate(16,16)">
+    <!-- Dragon outline -->
+    <path d="M-8,-4 Q-8,-8 -4,-8 Q0,-10 4,-8 Q8,-8 8,-4 L8,2 Q8,4 4,4 L-4,4 Q-8,4 -8,2 Z" 
+          fill="none" stroke="#00ff41" stroke-width="1.5"/>
+    
+    <!-- Eyes -->
+    <circle cx="-3" cy="-3" r="1" fill="#00ffff"/>
+    <circle cx="3" cy="-3" r="1" fill="#00ffff"/>
+    
+    <!-- Terminal prompt -->
+    <text x="-2" y="2" font-family="monospace" font-size="4" fill="#00ff41">$</text>
+  </g>
+</svg>

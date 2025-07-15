@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#0a0a0a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#000000;stop-opacity:1" />
+    </radialGradient>
+    <linearGradient id="textGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00ffff;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#00ff41;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#bf00ff;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGrad)"/>
+  
+  <!-- Circuit pattern -->
+  <g opacity="0.1">
+    <defs>
+      <pattern id="circuit" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+        <line x1="0" y1="20" x2="40" y2="20" stroke="#00ffff" stroke-width="1"/>
+        <line x1="20" y1="0" x2="20" y2="40" stroke="#00ffff" stroke-width="1"/>
+      </pattern>
+    </defs>
+    <rect width="1200" height="630" fill="url(#circuit)"/>
+  </g>
+  
+  <!-- Main content -->
+  <g transform="translate(600,315)">
+    <!-- Title -->
+    <text x="0" y="-80" text-anchor="middle" font-family="monospace" font-size="48" font-weight="bold" fill="url(#textGlow)">
+      SEBASTIAN LOPEZ
+    </text>
+    
+    <!-- Subtitle -->
+    <text x="0" y="-30" text-anchor="middle" font-family="monospace" font-size="24" fill="#00ff41">
+      Cybersecurity Specialist
+    </text>
+    
+    <!-- Description -->
+    <text x="0" y="20" text-anchor="middle" font-family="monospace" font-size="18" fill="#ffffff">
+      Expert in SIEM/SOAR | Threat Hunting | Red &amp; Blue Team
+    </text>
+    
+    <!-- Terminal window -->
+    <rect x="-300" y="60" width="600" height="120" fill="#000000" stroke="#00ff41" stroke-width="2" rx="8"/>
+    <rect x="-300" y="60" width="600" height="30" fill="#00ff41" rx="8 8 0 0"/>
+    
+    <!-- Terminal content -->
+    <text x="-280" y="120" font-family="monospace" font-size="16" fill="#00ff41">
+      $ whoami
+    </text>
+    <text x="-280" y="145" font-family="monospace" font-size="14" fill="#ffffff">
+      sebastian@cybersec: Security Expert | Available for Consulting
+    </text>
+  </g>
+  
+  <!-- Corner elements -->
+  <circle cx="100" cy="100" r="3" fill="#00ffff" opacity="0.6"/>
+  <circle cx="1100" cy="530" r="3" fill="#bf00ff" opacity="0.6"/>
+</svg>

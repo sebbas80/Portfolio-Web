@@ -1,0 +1,11 @@
+<!-- Simple text-based favicon as ICO alternative -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <!-- Background -->
+  <rect width="16" height="16" fill="#0a0a0a"/>
+  
+  <!-- Terminal prompt -->
+  <text x="2" y="12" font-family="monospace" font-size="10" fill="#00ff41">$</text>
+  
+  <!-- Cursor -->
+  <rect x="8" y="8" width="6" height="2" fill="#00ffff"/>
+</svg>
