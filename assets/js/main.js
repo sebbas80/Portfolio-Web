@@ -6,7 +6,6 @@
 
 class PortfolioApp {
     constructor() {
-        this.currentLang = 'es';
         this.isDarkMode = false;
         this.particles = [];
         this.matrixChars = '01';
@@ -25,12 +24,6 @@ class PortfolioApp {
     }
 
     setupEventListeners() {
-        // Language Toggle
-        const langToggle = document.getElementById('langToggle');
-        if (langToggle) {
-            langToggle.addEventListener('click', () => this.switchLanguage());
-        }
-
         // Theme Toggle
         const themeToggle = document.getElementById('themeToggle');
         if (themeToggle) {
@@ -69,43 +62,6 @@ class PortfolioApp {
             document.body.classList.add('animate-fade-in');
             this.initTypingEffect();
         });
-    }
-
-    // Language System
-    switchLanguage() {
-        this.currentLang = this.currentLang === 'es' ? 'en' : 'es';
-        const langText = document.getElementById('langText');
-        
-        if (langText) {
-            langText.textContent = this.currentLang === 'es' ? 'EN' : 'ES';
-        }
-        
-        // Update all elements with language data attributes
-        const elements = document.querySelectorAll('[data-es][data-en]');
-        elements.forEach(element => {
-            const text = element.getAttribute(`data-${this.currentLang}`);
-            if (text) {
-                element.textContent = text;
-            }
-        });
-
-        // Update placeholders
-        const placeholderElements = document.querySelectorAll('[data-placeholder-es][data-placeholder-en]');
-        placeholderElements.forEach(element => {
-            const placeholder = element.getAttribute(`data-placeholder-${this.currentLang}`);
-            if (placeholder) {
-                element.placeholder = placeholder;
-            }
-        });
-
-        // Update HTML lang attribute
-        const htmlRoot = document.getElementById('html-root');
-        if (htmlRoot) {
-            htmlRoot.lang = this.currentLang;
-        }
-
-        // Save preference
-        localStorage.setItem('language', this.currentLang);
     }
 
     // Theme System
@@ -432,12 +388,6 @@ class PortfolioApp {
 
     // Preferences
     loadSavedPreferences() {
-        // Load language
-        const savedLang = localStorage.getItem('language');
-        if (savedLang && savedLang !== this.currentLang) {
-            this.switchLanguage();
-        }
-
         // Load dark mode
         const savedDarkMode = localStorage.getItem('darkMode');
         if (savedDarkMode === 'true' && !this.isDarkMode) {
@@ -483,7 +433,7 @@ function handleContactForm(e) {
     const originalText = submitButton.innerHTML;
     
     // Update button state
-    submitButton.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i><span data-es="Enviando..." data-en="Sending...">Sending...</span>';
+    submitButton.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Sending...';
     submitButton.disabled = true;
     
     // Hide previous response
@@ -496,13 +446,13 @@ function handleContactForm(e) {
         responseDiv.innerHTML = `
             <div class="flex items-center">
                 <i class="fas fa-check-circle text-neon-green mr-2"></i>
-                <span class="font-mono text-sm text-neon-green" data-es="Mensaje enviado con éxito. Te contactaré pronto." data-en="Message sent successfully. I'll contact you soon.">Message sent successfully. I'll contact you soon.</span>
+                <span class="font-mono text-sm text-neon-green">Message sent successfully. I'll contact you soon.</span>
             </div>
         `;
         responseDiv.classList.remove('hidden');
         
         // Update button to success state
-        submitButton.innerHTML = '<i class="fas fa-check mr-2"></i><span data-es="¡Mensaje Enviado!" data-en="Message Sent!">Message Sent!</span>';
+        submitButton.innerHTML = '<i class="fas fa-check mr-2"></i>Message Sent!';
         submitButton.classList.remove('bg-neon-green', 'hover:bg-neon-blue');
         submitButton.classList.add('bg-green-600', 'hover:bg-green-700');
         

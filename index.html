@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" id="html-root">
+<html lang="en" id="html-root">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -62,15 +62,7 @@
     <div id="particles" aria-hidden="true"></div>
     
     <!-- Control Panel -->
-    <div class="fixed top-4 right-4 z-50 flex space-x-2">
-        <!-- Language Toggle -->
-        <button id="langToggle" 
-                class="bg-black bg-opacity-80 neon-border text-neon-blue px-4 py-2 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105 font-mono"
-                aria-label="Toggle Language">
-            <i class="fas fa-globe mr-2" aria-hidden="true"></i>
-            <span id="langText">EN</span>
-        </button>
-        
+    <div class="fixed top-4 right-4 z-50">
         <!-- Theme Toggle -->
         <button id="themeToggle" 
                 class="bg-black bg-opacity-80 neon-border text-neon-green px-4 py-2 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105 font-mono"
@@ -96,16 +88,16 @@
         <!-- Navigation -->
         <nav class="relative z-20 flex justify-between items-center p-6 bg-black bg-opacity-30 backdrop-blur-sm" role="navigation">
             <div class="text-neon-blue text-2xl font-bold font-mono animate-glow">
-                <span class="glitch" data-text="SL" data-es="SL" data-en="SL">SL</span>
+                <span class="glitch" data-text="SL">SL</span>
             </div>
             <div class="hidden md:flex space-x-8 font-mono">
-                <a href="#about" class="text-neon-blue hover:text-neon-green transition-colors duration-300 hover:animate-glow" data-es="~/about" data-en="~/about">~/about</a>
-                <a href="#experience" class="text-neon-blue hover:text-neon-green transition-colors duration-300 hover:animate-glow" data-es="~/experience" data-en="~/experience">~/experience</a>
-                <a href="#skills" class="text-neon-blue hover:text-neon-green transition-colors duration-300 hover:animate-glow" data-es="~/skills" data-en="~/skills">~/skills</a>
-                <a href="#projects" class="text-neon-blue hover:text-neon-green transition-colors duration-300 hover:animate-glow" data-es="~/projects" data-en="~/projects">~/projects</a>
-                <a href="#certifications" class="text-neon-blue hover:text-neon-green transition-colors duration-300 hover:animate-glow" data-es="~/certs" data-en="~/certs">~/certs</a>
-                <a href="#education" class="text-neon-blue hover:text-neon-green transition-colors duration-300 hover:animate-glow" data-es="~/education" data-en="~/education">~/education</a>
-                <a href="#contact" class="text-neon-blue hover:text-neon-green transition-colors duration-300 hover:animate-glow" data-es="~/contact" data-en="~/contact">~/contact</a>
+                <a href="#about" class="text-neon-blue hover:text-neon-green transition-colors duration-300 hover:animate-glow">~/about</a>
+                <a href="#experience" class="text-neon-blue hover:text-neon-green transition-colors duration-300 hover:animate-glow">~/experience</a>
+                <a href="#skills" class="text-neon-blue hover:text-neon-green transition-colors duration-300 hover:animate-glow">~/skills</a>
+                <a href="#projects" class="text-neon-blue hover:text-neon-green transition-colors duration-300 hover:animate-glow">~/projects</a>
+                <a href="#certifications" class="text-neon-blue hover:text-neon-green transition-colors duration-300 hover:animate-glow">~/certs</a>
+                <a href="#education" class="text-neon-blue hover:text-neon-green transition-colors duration-300 hover:animate-glow">~/education</a>
+                <a href="#contact" class="text-neon-blue hover:text-neon-green transition-colors duration-300 hover:animate-glow">~/contact</a>
             </div>
         </nav>
 
@@ -146,9 +138,7 @@
                 
                 <div class="text-lg mb-10 text-gray-300 max-w-3xl mx-auto animate-slide-up font-mono leading-relaxed" style="animation-delay: 0.4s;">
                     <span class="text-neon-blue">[</span>
-                    <span data-es="ESPECIALISTA EN CIBERSEGURIDAD | THREAT HUNTING | RED & BLUE TEAM" data-en="CYBERSECURITY SPECIALIST | THREAT HUNTING | RED & BLUE TEAM">
-                        CYBERSECURITY SPECIALIST | THREAT HUNTING | RED & BLUE TEAM
-                    </span>
+                    <span>CYBERSECURITY SPECIALIST | THREAT HUNTING | RED & BLUE TEAM</span>
                     <span class="text-neon-blue">]</span>
                 </div>
                 
@@ -176,7 +166,7 @@
                         class="bg-black bg-opacity-80 neon-border text-neon-green px-8 py-3 rounded font-semibold transition-all duration-300 transform hover:scale-105 animate-slide-up font-mono hover:bg-neon-green hover:text-black" 
                         style="animation-delay: 0.8s;"
                         aria-label="View Profile">
-                    <span data-es="$ cat /profile" data-en="$ cat /profile">$ cat /profile</span>
+                    <span>$ cat /profile</span>
                 </button>
             </div>
         </main>
@@ -197,7 +187,7 @@
         
         <div class="max-w-6xl mx-auto px-6 relative z-10">
             <div class="text-center mb-16">
-                <h2 class="text-5xl font-bold text-neon-blue mb-4 observation-target font-mono glitch" data-text="ABOUT.EXE" data-es="ABOUT.EXE" data-en="ABOUT.EXE">
+                <h2 class="text-5xl font-bold text-neon-blue mb-4 observation-target font-mono glitch" data-text="ABOUT.EXE">
                     ABOUT.EXE
                 </h2>
                 <div class="w-32 h-1 bg-neon-green mx-auto mb-8 animate-glow" aria-hidden="true"></div>
@@ -231,14 +221,10 @@
                     </div>
                     
                     <div class="space-y-6">
-                        <p class="text-gray-300 leading-relaxed font-mono text-sm" 
-                           data-es="Especialista en ciberseguridad con amplia experiencia en SIEM, SOAR y seguridad en Azure/AWS. Mi misión es proteger sistemas de información mediante detección proactiva de amenazas y gestión de riesgos avanzada." 
-                           data-en="Cybersecurity specialist with extensive experience in SIEM, SOAR, and Azure/AWS security. My mission is to protect information systems through proactive threat detection and advanced risk management.">
+                        <p class="text-gray-300 leading-relaxed font-mono text-sm">
                             <span class="text-neon-green">&gt;</span> Cybersecurity specialist with extensive experience in SIEM, SOAR, and Azure/AWS security. My mission is to protect information systems through proactive threat detection and advanced risk management.
                         </p>
-                        <p class="text-gray-300 leading-relaxed font-mono text-sm"
-                           data-es="Experiencia en pentesting Web2/Web3, operaciones Red & Blue Team, y cumplimiento normativo con frameworks NIST, OWASP y MITRE ATT&CK."
-                           data-en="Experience in Web2/Web3 pentesting, Red & Blue Team operations, and regulatory compliance with NIST, OWASP, and MITRE ATT&CK frameworks.">
+                        <p class="text-gray-300 leading-relaxed font-mono text-sm">
                             <span class="text-neon-green">&gt;</span> Experience in Web2/Web3 pentesting, Red & Blue Team operations, and regulatory compliance with NIST, OWASP, and MITRE ATT&CK frameworks.
                         </p>
                     </div>
@@ -247,15 +233,15 @@
                     <div class="grid grid-cols-3 gap-4 mt-8">
                         <div class="text-center bg-black bg-opacity-60 neon-border rounded-lg p-4">
                             <div class="text-4xl font-bold text-neon-green counter font-mono" data-target="100">0</div>
-                            <div class="text-xs text-gray-400 font-mono" data-es="INCIDENTS_RESOLVED" data-en="INCIDENTS_RESOLVED">INCIDENTS_RESOLVED</div>
+                            <div class="text-xs text-gray-400 font-mono" data-en="INCIDENTS_RESOLVED">INCIDENTS_RESOLVED</div>
                         </div>
                         <div class="text-center bg-black bg-opacity-60 neon-border rounded-lg p-4">
                             <div class="text-4xl font-bold text-neon-blue counter font-mono" data-target="3">0</div>
-                            <div class="text-xs text-gray-400 font-mono" data-es="YEARS_EXPERIENCE" data-en="YEARS_EXPERIENCE">YEARS_EXPERIENCE</div>
+                            <div class="text-xs text-gray-400 font-mono" data-en="YEARS_EXPERIENCE">YEARS_EXPERIENCE</div>
                         </div>
                         <div class="text-center bg-black bg-opacity-60 neon-border rounded-lg p-4">
                             <div class="text-4xl font-bold text-neon-purple counter font-mono" data-target="308">0</div>
-                            <div class="text-xs text-gray-400 font-mono" data-es="NETWORK_CONTACTS" data-en="NETWORK_CONTACTS">NETWORK_CONTACTS</div>
+                            <div class="text-xs text-gray-400 font-mono" data-en="NETWORK_CONTACTS">NETWORK_CONTACTS</div>
                         </div>
                     </div>
                 </div>
@@ -265,7 +251,7 @@
                     <div class="bg-black bg-opacity-80 neon-border rounded-lg p-8 relative overflow-hidden">
                         <div class="scan-line" aria-hidden="true"></div>
                         <h3 class="text-2xl font-semibold mb-6 text-neon-blue font-mono" 
-                            data-es="SYSTEM_INFO" data-en="SYSTEM_INFO">SYSTEM_INFO</h3>
+                            data-en="SYSTEM_INFO">SYSTEM_INFO</h3>
                         <div class="space-y-4 font-mono text-sm">
                             <div class="flex items-center">
                                 <i class="fas fa-terminal mr-3 text-neon-green" aria-hidden="true"></i>
@@ -275,7 +261,7 @@
                             <div class="flex items-center">
                                 <i class="fas fa-map-marker-alt mr-3 text-neon-green" aria-hidden="true"></i>
                                 <span class="text-neon-blue">Location:</span>
-                                <span class="ml-2 text-white" data-es="Buenos Aires, Argentina" data-en="Buenos Aires, Argentina">Buenos Aires, Argentina</span>
+                                <span class="ml-2 text-white" data-en="Buenos Aires, Argentina">Buenos Aires, Argentina</span>
                             </div>
                             <div class="flex items-center">
                                 <i class="fas fa-envelope mr-3 text-neon-green" aria-hidden="true"></i>
@@ -290,7 +276,7 @@
                             <div class="flex items-center">
                                 <i class="fas fa-graduation-cap mr-3 text-neon-green" aria-hidden="true"></i>
                                 <span class="text-neon-blue">Education:</span>
-                                <span class="ml-2 text-white" data-es="Tecnicatura en Informática | Bachiller Sagrado Corazón" data-en="Computer Science Technician | Sagrado Corazón Graduate">Computer Science Technician | Sagrado Corazón Graduate</span>
+                                <span class="ml-2 text-white" data-en="Computer Science Technician | Sagrado Corazón Graduate">Computer Science Technician | Sagrado Corazón Graduate</span>
                             </div>
                             <div class="flex items-center">
                                 <i class="fas fa-certificate mr-3 text-neon-green" aria-hidden="true"></i>
@@ -319,7 +305,7 @@
         
         <div class="max-w-6xl mx-auto px-6 relative z-10">
             <div class="text-center mb-16">
-                <h2 class="text-5xl font-bold text-neon-blue mb-4 observation-target font-mono glitch" data-text="EXPERIENCE.LOG" data-es="EXPERIENCE.LOG" data-en="EXPERIENCE.LOG">
+                <h2 class="text-5xl font-bold text-neon-blue mb-4 observation-target font-mono glitch" data-text="EXPERIENCE.LOG" data-en="EXPERIENCE.LOG">
                     EXPERIENCE.LOG
                 </h2>
                 <div class="w-32 h-1 bg-neon-green mx-auto mb-8 animate-glow" aria-hidden="true"></div>
@@ -343,16 +329,16 @@
                                     <div class="flex items-center mb-4">
                                         <i class="fas fa-shield-alt text-2xl text-neon-blue mr-4"></i>
                                         <div>
-                                            <h3 class="text-xl font-semibold text-neon-green font-mono" data-es="Ssr. Cybersecurity Specialist" data-en="Ssr. Cybersecurity Specialist">Ssr. Cybersecurity Specialist</h3>
-                                            <p class="text-neon-blue font-medium font-mono" data-es="Mendel" data-en="Mendel">Mendel</p>
+                                            <h3 class="text-xl font-semibold text-neon-green font-mono" data-en="Ssr. Cybersecurity Specialist">Ssr. Cybersecurity Specialist</h3>
+                                            <p class="text-neon-blue font-medium font-mono" data-en="Mendel">Mendel</p>
                                         </div>
                                     </div>
-                                    <p class="text-gray-400 text-sm mb-4 font-mono" data-es="2024 - Presente | Buenos Aires, Argentina" data-en="2024 - Present | Buenos Aires, Argentina">2024 - Present | Buenos Aires, Argentina</p>
+                                    <p class="text-gray-400 text-sm mb-4 font-mono" data-en="2024 - Present | Buenos Aires, Argentina">2024 - Present | Buenos Aires, Argentina</p>
                                     <div class="text-gray-300 text-sm font-mono space-y-2">
-                                        <p data-es="Como Analista de Seguridad Semi Senior, lidero esfuerzos para implementar y mantener controles de seguridad robustos, gestionar privilegios de acceso y monitorear sistemas para prevenir violaciones." data-en="As a Semi Senior Security Analyst, I lead efforts to implement and maintain robust security controls, manage access privileges, and monitor systems to prevent breaches.">
+                                        <p data-en="As a Semi Senior Security Analyst, I lead efforts to implement and maintain robust security controls, manage access privileges, and monitor systems to prevent breaches.">
                                             <span class="text-neon-green">></span> As a Semi Senior Security Analyst, I lead efforts to implement and maintain robust security controls, manage access privileges, and monitor systems to prevent breaches.
                                         </p>
-                                        <p data-es="Especializado en prevención de fraude para empresas fintech, identificando riesgos y optimizando defensas en plataformas digitales." data-en="Specialized in fraud prevention for fintech companies, identifying risks and optimizing defenses across digital platforms.">
+                                        <p data-en="Specialized in fraud prevention for fintech companies, identifying risks and optimizing defenses across digital platforms.">
                                             <span class="text-neon-green">></span> Specialized in fraud prevention for fintech companies, identifying risks and optimizing defenses across digital platforms.
                                         </p>
                                     </div>
@@ -379,16 +365,16 @@
                                     <div class="flex items-center mb-4">
                                         <i class="fas fa-eye text-2xl text-neon-blue mr-4"></i>
                                         <div>
-                                            <h3 class="text-xl font-semibold text-neon-green font-mono" data-es="Jr SOC Analyst" data-en="Jr SOC Analyst">Jr SOC Analyst</h3>
-                                            <p class="text-neon-blue font-medium font-mono" data-es="Netrix LLC" data-en="Netrix LLC">Netrix LLC</p>
+                                            <h3 class="text-xl font-semibold text-neon-green font-mono" data-en="Jr SOC Analyst">Jr SOC Analyst</h3>
+                                            <p class="text-neon-blue font-medium font-mono" data-en="Netrix LLC">Netrix LLC</p>
                                         </div>
                                     </div>
-                                    <p class="text-gray-400 text-sm mb-4 font-mono" data-es="2022 - 2024 | Buenos Aires, Argentina" data-en="2022 - 2024 | Buenos Aires, Argentina">2022 - 2024 | Buenos Aires, Argentina</p>
+                                    <p class="text-gray-400 text-sm mb-4 font-mono" data-en="2022 - 2024 | Buenos Aires, Argentina">2022 - 2024 | Buenos Aires, Argentina</p>
                                     <div class="text-gray-300 text-sm font-mono space-y-2">
-                                        <p data-es="Analista de Seguridad Junior con rol vital en la protección de recursos digitales y redes utilizando herramientas avanzadas de ciberseguridad." data-en="Junior Security Analyst with vital role in protecting digital resources and networks using advanced cybersecurity tools.">
+                                        <p data-en="Junior Security Analyst with vital role in protecting digital resources and networks using advanced cybersecurity tools.">
                                             <span class="text-neon-green">></span> Junior Security Analyst with vital role in protecting digital resources and networks using advanced cybersecurity tools.
                                         </p>
-                                        <p data-es="Monitoreo activo de amenazas, detección de riesgos potenciales y respuesta rápida a incidentes de seguridad." data-en="Active threat monitoring, potential risk detection, and rapid response to security incidents.">
+                                        <p data-en="Active threat monitoring, potential risk detection, and rapid response to security incidents.">
                                             <span class="text-neon-green">></span> Active threat monitoring, potential risk detection, and rapid response to security incidents.
                                         </p>
                                     </div>
@@ -414,7 +400,7 @@
         
         <div class="max-w-6xl mx-auto px-6 relative z-10">
             <div class="text-center mb-16">
-                <h2 class="text-5xl font-bold text-neon-blue mb-4 observation-target font-mono glitch" data-text="SKILLS.DB" data-es="SKILLS.DB" data-en="SKILLS.DB">
+                <h2 class="text-5xl font-bold text-neon-blue mb-4 observation-target font-mono glitch" data-text="SKILLS.DB" data-en="SKILLS.DB">
                     SKILLS.DB
                 </h2>
                 <div class="w-32 h-1 bg-neon-green mx-auto mb-8 animate-glow" aria-hidden="true"></div>
@@ -431,7 +417,7 @@
                         <div class="p-6">
                             <div class="text-center mb-6">
                                 <i class="fas fa-radar-chart text-4xl text-neon-blue mb-4"></i>
-                                <h3 class="text-xl font-semibold text-neon-green font-mono" data-es="SIEM & SOAR" data-en="SIEM & SOAR">SIEM & SOAR</h3>
+                                <h3 class="text-xl font-semibold text-neon-green font-mono" data-en="SIEM & SOAR">SIEM & SOAR</h3>
                             </div>
                             <div class="space-y-3">
                                 <div class="skill-item" data-skill="95">
@@ -482,7 +468,7 @@
                         <div class="p-6">
                             <div class="text-center mb-6">
                                 <i class="fas fa-bug text-4xl text-neon-purple mb-4"></i>
-                                <h3 class="text-xl font-semibold text-neon-green font-mono" data-es="Penetration Testing" data-en="Penetration Testing">Penetration Testing</h3>
+                                <h3 class="text-xl font-semibold text-neon-green font-mono" data-en="Penetration Testing">Penetration Testing</h3>
                             </div>
                             <div class="space-y-3">
                                 <div class="skill-item" data-skill="85">
@@ -533,7 +519,7 @@
                         <div class="p-6">
                             <div class="text-center mb-6">
                                 <i class="fas fa-cloud-upload-alt text-4xl text-neon-red mb-4"></i>
-                                <h3 class="text-xl font-semibold text-neon-green font-mono" data-es="Cloud & Compliance" data-en="Cloud & Compliance">Cloud & Compliance</h3>
+                                <h3 class="text-xl font-semibold text-neon-green font-mono" data-en="Cloud & Compliance">Cloud & Compliance</h3>
                             </div>
                             <div class="space-y-3">
                                 <div class="skill-item" data-skill="90">
@@ -583,32 +569,32 @@
                 <div class="observation-target text-center">
                     <div class="bg-black bg-opacity-60 neon-border rounded-lg p-6 hover:shadow-lg transition-all duration-300">
                         <i class="fas fa-linux text-4xl text-neon-blue mb-4"></i>
-                        <h4 class="font-semibold text-neon-green mb-2 font-mono" data-es="Linux Systems" data-en="Linux Systems">Linux Systems</h4>
-                        <p class="text-gray-400 text-sm font-mono" data-es="Administración Avanzada" data-en="Advanced Administration">Advanced Administration</p>
+                        <h4 class="font-semibold text-neon-green mb-2 font-mono" data-en="Linux Systems">Linux Systems</h4>
+                        <p class="text-gray-400 text-sm font-mono" data-en="Advanced Administration">Advanced Administration</p>
                     </div>
                 </div>
                 
                 <div class="observation-target text-center">
                     <div class="bg-black bg-opacity-60 neon-border rounded-lg p-6 hover:shadow-lg transition-all duration-300">
                         <i class="fas fa-code text-4xl text-neon-purple mb-4"></i>
-                        <h4 class="font-semibold text-neon-green mb-2 font-mono" data-es="Automation Scripts" data-en="Automation Scripts">Automation Scripts</h4>
-                        <p class="text-gray-400 text-sm font-mono" data-es="Python, Bash, PowerShell" data-en="Python, Bash, PowerShell">Python, Bash, PowerShell</p>
+                        <h4 class="font-semibold text-neon-green mb-2 font-mono" data-en="Automation Scripts">Automation Scripts</h4>
+                        <p class="text-gray-400 text-sm font-mono" data-en="Python, Bash, PowerShell">Python, Bash, PowerShell</p>
                     </div>
                 </div>
                 
                 <div class="observation-target text-center">
                     <div class="bg-black bg-opacity-60 neon-border rounded-lg p-6 hover:shadow-lg transition-all duration-300">
                         <i class="fas fa-users text-4xl text-neon-green mb-4"></i>
-                        <h4 class="font-semibold text-neon-green mb-2 font-mono" data-es="Team Leadership" data-en="Team Leadership">Team Leadership</h4>
-                        <p class="text-gray-400 text-sm font-mono" data-es="Coaching & Training" data-en="Coaching & Training">Coaching & Training</p>
+                        <h4 class="font-semibold text-neon-green mb-2 font-mono" data-en="Team Leadership">Team Leadership</h4>
+                        <p class="text-gray-400 text-sm font-mono" data-en="Coaching & Training">Coaching & Training</p>
                     </div>
                 </div>
                 
                 <div class="observation-target text-center">
                     <div class="bg-black bg-opacity-60 neon-border rounded-lg p-6 hover:shadow-lg transition-all duration-300">
                         <i class="fas fa-shield-virus text-4xl text-neon-red mb-4"></i>
-                        <h4 class="font-semibold text-neon-green mb-2 font-mono" data-es="Physical Security" data-en="Physical Security">Physical Security</h4>
-                        <p class="text-gray-400 text-sm font-mono" data-es="Protocolos Integrados" data-en="Integrated Protocols">Integrated Protocols</p>
+                        <h4 class="font-semibold text-neon-green mb-2 font-mono" data-en="Physical Security">Physical Security</h4>
+                        <p class="text-gray-400 text-sm font-mono" data-en="Integrated Protocols">Integrated Protocols</p>
                     </div>
                 </div>
             </div>
@@ -622,7 +608,7 @@
         
         <div class="max-w-6xl mx-auto px-6 relative z-10">
             <div class="text-center mb-16">
-                <h2 class="text-5xl font-bold text-neon-blue mb-4 observation-target font-mono glitch" data-text="PROJECTS.SH" data-es="PROJECTS.SH" data-en="PROJECTS.SH">
+                <h2 class="text-5xl font-bold text-neon-blue mb-4 observation-target font-mono glitch" data-text="PROJECTS.SH" data-en="PROJECTS.SH">
                     PROJECTS.SH
                 </h2>
                 <div class="w-32 h-1 bg-neon-green mx-auto mb-8 animate-glow" aria-hidden="true"></div>
@@ -644,8 +630,8 @@
                             </div>
                         </div>
                         <div class="p-6">
-                            <h3 class="text-xl font-semibold text-neon-green mb-3 font-mono" data-es="SIEM/SOAR Implementation" data-en="SIEM/SOAR Implementation">SIEM/SOAR Implementation</h3>
-                            <p class="text-gray-300 mb-4 text-sm font-mono" data-es="Implementación completa de solución SIEM usando RADAR y Splunk para detección avanzada de amenazas y respuesta automatizada a incidentes." data-en="Complete SIEM solution implementation using RADAR and Splunk for advanced threat detection and automated incident response.">
+                            <h3 class="text-xl font-semibold text-neon-green mb-3 font-mono" data-en="SIEM/SOAR Implementation">SIEM/SOAR Implementation</h3>
+                            <p class="text-gray-300 mb-4 text-sm font-mono" data-en="Complete SIEM solution implementation using RADAR and Splunk for advanced threat detection and automated incident response.">
                                 Complete SIEM solution implementation using RADAR and Splunk for advanced threat detection and automated incident response.
                             </p>
                             <div class="flex flex-wrap gap-2 mb-4">
@@ -656,7 +642,7 @@
                             <div class="flex space-x-4">
                                 <button class="text-neon-blue hover:text-neon-green transition-colors duration-300 font-mono text-sm">
                                     <i class="fas fa-eye mr-1"></i>
-                                    <span data-es="Ver Detalles" data-en="View Details">View Details</span>
+                                    <span data-en="View Details">View Details</span>
                                 </button>
                             </div>
                         </div>
@@ -675,8 +661,8 @@
                             </div>
                         </div>
                         <div class="p-6">
-                            <h3 class="text-xl font-semibold text-neon-green mb-3 font-mono" data-es="Anti-Fraud System" data-en="Anti-Fraud System">Anti-Fraud System</h3>
-                            <p class="text-gray-300 mb-4 text-sm font-mono" data-es="Sistema avanzado de prevención de fraude para empresas fintech con análisis de comportamiento en tiempo real y detección de anomalías." data-en="Advanced fraud prevention system for fintech companies with real-time behavior analysis and anomaly detection.">
+                            <h3 class="text-xl font-semibold text-neon-green mb-3 font-mono" data-en="Anti-Fraud System">Anti-Fraud System</h3>
+                            <p class="text-gray-300 mb-4 text-sm font-mono" data-en="Advanced fraud prevention system for fintech companies with real-time behavior analysis and anomaly detection.">
                                 Advanced fraud prevention system for fintech companies with real-time behavior analysis and anomaly detection.
                             </p>
                             <div class="flex flex-wrap gap-2 mb-4">
@@ -687,7 +673,7 @@
                             <div class="flex space-x-4">
                                 <button class="text-neon-blue hover:text-neon-green transition-colors duration-300 font-mono text-sm">
                                     <i class="fas fa-eye mr-1"></i>
-                                    <span data-es="Ver Detalles" data-en="View Details">View Details</span>
+                                    <span data-en="View Details">View Details</span>
                                 </button>
                             </div>
                         </div>
@@ -706,8 +692,8 @@
                             </div>
                         </div>
                         <div class="p-6">
-                            <h3 class="text-xl font-semibold text-neon-green mb-3 font-mono" data-es="Cloud Security Assessment" data-en="Cloud Security Assessment">Cloud Security Assessment</h3>
-                            <p class="text-gray-300 mb-4 text-sm font-mono" data-es="Evaluación completa de seguridad para infraestructuras Azure y AWS con auditorías de compliance NIST y SOC 2." data-en="Complete security assessment for Azure and AWS infrastructures with NIST and SOC 2 compliance audits.">
+                            <h3 class="text-xl font-semibold text-neon-green mb-3 font-mono" data-en="Cloud Security Assessment">Cloud Security Assessment</h3>
+                            <p class="text-gray-300 mb-4 text-sm font-mono" data-en="Complete security assessment for Azure and AWS infrastructures with NIST and SOC 2 compliance audits.">
                                 Complete security assessment for Azure and AWS infrastructures with NIST and SOC 2 compliance audits.
                             </p>
                             <div class="flex flex-wrap gap-2 mb-4">
@@ -718,7 +704,7 @@
                             <div class="flex space-x-4">
                                 <button class="text-neon-blue hover:text-neon-green transition-colors duration-300 font-mono text-sm">
                                     <i class="fas fa-eye mr-1"></i>
-                                    <span data-es="Ver Detalles" data-en="View Details">View Details</span>
+                                    <span data-en="View Details">View Details</span>
                                 </button>
                             </div>
                         </div>
@@ -737,8 +723,8 @@
                             </div>
                         </div>
                         <div class="p-6">
-                            <h3 class="text-xl font-semibold text-neon-green mb-3 font-mono" data-es="Security Awareness Training" data-en="Security Awareness Training">Security Awareness Training</h3>
-                            <p class="text-gray-300 mb-4 text-sm font-mono" data-es="Plataforma de entrenamiento en concientización de seguridad con simulaciones de phishing y coaching para equipos completos." data-en="Security awareness training platform with phishing simulations and coaching for complete teams.">
+                            <h3 class="text-xl font-semibold text-neon-green mb-3 font-mono" data-en="Security Awareness Training">Security Awareness Training</h3>
+                            <p class="text-gray-300 mb-4 text-sm font-mono" data-en="Security awareness training platform with phishing simulations and coaching for complete teams.">
                                 Security awareness training platform with phishing simulations and coaching for complete teams.
                             </p>
                             <div class="flex flex-wrap gap-2 mb-4">
@@ -749,7 +735,7 @@
                             <div class="flex space-x-4">
                                 <button class="text-neon-blue hover:text-neon-green transition-colors duration-300 font-mono text-sm">
                                     <i class="fas fa-eye mr-1"></i>
-                                    <span data-es="Ver Detalles" data-en="View Details">View Details</span>
+                                    <span data-en="View Details">View Details</span>
                                 </button>
                             </div>
                         </div>
@@ -768,8 +754,8 @@
                             </div>
                         </div>
                         <div class="p-6">
-                            <h3 class="text-xl font-semibold text-neon-green mb-3 font-mono" data-es="Network Security Automation" data-en="Network Security Automation">Network Security Automation</h3>
-                            <p class="text-gray-300 mb-4 text-sm font-mono" data-es="Scripts de automatización avanzada para seguridad de red usando Fortinet con detección y respuesta automatizada." data-en="Advanced automation scripts for network security using Fortinet with automated detection and response.">
+                            <h3 class="text-xl font-semibold text-neon-green mb-3 font-mono" data-en="Network Security Automation">Network Security Automation</h3>
+                            <p class="text-gray-300 mb-4 text-sm font-mono" data-en="Advanced automation scripts for network security using Fortinet with automated detection and response.">
                                 Advanced automation scripts for network security using Fortinet with automated detection and response.
                             </p>
                             <div class="flex flex-wrap gap-2 mb-4">
@@ -780,7 +766,7 @@
                             <div class="flex space-x-4">
                                 <button class="text-neon-blue hover:text-neon-green transition-colors duration-300 font-mono text-sm">
                                     <i class="fas fa-eye mr-1"></i>
-                                    <span data-es="Ver Detalles" data-en="View Details">View Details</span>
+                                    <span data-en="View Details">View Details</span>
                                 </button>
                             </div>
                         </div>
@@ -799,8 +785,8 @@
                             </div>
                         </div>
                         <div class="p-6">
-                            <h3 class="text-xl font-semibold text-neon-green mb-3 font-mono" data-es="Vulnerability Management System" data-en="Vulnerability Management System">Vulnerability Management System</h3>
-                            <p class="text-gray-300 mb-4 text-sm font-mono" data-es="Sistema completo de gestión de vulnerabilidades con Carbon Black y evaluaciones continuas de riesgo para infraestructuras críticas." data-en="Complete vulnerability management system with Carbon Black and continuous risk assessments for critical infrastructures.">
+                            <h3 class="text-xl font-semibold text-neon-green mb-3 font-mono" data-en="Vulnerability Management System">Vulnerability Management System</h3>
+                            <p class="text-gray-300 mb-4 text-sm font-mono" data-en="Complete vulnerability management system with Carbon Black and continuous risk assessments for critical infrastructures.">
                                 Complete vulnerability management system with Carbon Black and continuous risk assessments for critical infrastructures.
                             </p>
                             <div class="flex flex-wrap gap-2 mb-4">
@@ -811,7 +797,7 @@
                             <div class="flex space-x-4">
                                 <button class="text-neon-blue hover:text-neon-green transition-colors duration-300 font-mono text-sm">
                                     <i class="fas fa-eye mr-1"></i>
-                                    <span data-es="Ver Detalles" data-en="View Details">View Details</span>
+                                    <span data-en="View Details">View Details</span>
                                 </button>
                             </div>
                         </div>
@@ -828,7 +814,7 @@
         
         <div class="max-w-6xl mx-auto px-6 relative z-10">
             <div class="text-center mb-16">
-                <h2 class="text-5xl font-bold text-neon-blue mb-4 observation-target font-mono glitch" data-text="CERTS.PKI" data-es="CERTS.PKI" data-en="CERTS.PKI">
+                <h2 class="text-5xl font-bold text-neon-blue mb-4 observation-target font-mono glitch" data-text="CERTS.PKI" data-en="CERTS.PKI">
                     CERTS.PKI
                 </h2>
                 <div class="w-32 h-1 bg-neon-green mx-auto mb-8 animate-glow" aria-hidden="true"></div>
@@ -848,8 +834,8 @@
                                     <i class="fab fa-aws text-white text-2xl"></i>
                                 </div>
                                 <div>
-                                    <h3 class="text-xl font-semibold text-neon-green font-mono" data-es="AWS Certified" data-en="AWS Certified">AWS Certified</h3>
-                                    <p class="text-neon-blue text-sm font-mono" data-es="Cloud Practitioner (CLF-CO1)" data-en="Cloud Practitioner (CLF-CO1)">Cloud Practitioner (CLF-CO1)</p>
+                                    <h3 class="text-xl font-semibold text-neon-green font-mono" data-en="AWS Certified">AWS Certified</h3>
+                                    <p class="text-neon-blue text-sm font-mono" data-en="Cloud Practitioner (CLF-CO1)">Cloud Practitioner (CLF-CO1)</p>
                                 </div>
                             </div>
                             <div class="space-y-2 font-mono text-sm">
@@ -877,8 +863,8 @@
                                     <i class="fab fa-microsoft text-white text-2xl"></i>
                                 </div>
                                 <div>
-                                    <h3 class="text-xl font-semibold text-neon-green font-mono" data-es="Azure Certified" data-en="Azure Certified">Azure Certified</h3>
-                                    <p class="text-neon-blue text-sm font-mono" data-es="Security, Compliance & Identity (SC-900)" data-en="Security, Compliance & Identity (SC-900)">Security, Compliance & Identity (SC-900)</p>
+                                    <h3 class="text-xl font-semibold text-neon-green font-mono" data-en="Azure Certified">Azure Certified</h3>
+                                    <p class="text-neon-blue text-sm font-mono" data-en="Security, Compliance & Identity (SC-900)">Security, Compliance & Identity (SC-900)</p>
                                 </div>
                             </div>
                             <div class="space-y-2 font-mono text-sm">
@@ -906,8 +892,8 @@
                                     <i class="fas fa-cube text-white text-2xl"></i>
                                 </div>
                                 <div>
-                                    <h3 class="text-xl font-semibold text-neon-green font-mono" data-es="Web3 Certified" data-en="Web3 Certified">Web3 Certified</h3>
-                                    <p class="text-neon-blue text-sm font-mono" data-es="Blockchain Security Hacker" data-en="Blockchain Security Hacker">Blockchain Security Hacker</p>
+                                    <h3 class="text-xl font-semibold text-neon-green font-mono" data-en="Web3 Certified">Web3 Certified</h3>
+                                    <p class="text-neon-blue text-sm font-mono" data-en="Blockchain Security Hacker">Blockchain Security Hacker</p>
                                 </div>
                             </div>
                             <div class="space-y-2 font-mono text-sm">
@@ -935,8 +921,8 @@
                                     <i class="fas fa-graduation-cap text-white text-2xl"></i>
                                 </div>
                                 <div>
-                                    <h3 class="text-xl font-semibold text-neon-green font-mono" data-es="En Curso" data-en="In Progress">In Progress</h3>
-                                    <p class="text-neon-blue text-sm font-mono" data-es="Analista en Ciberseguridad" data-en="Cybersecurity Analyst">Cybersecurity Analyst</p>
+                                    <h3 class="text-xl font-semibold text-neon-green font-mono" data-en="In Progress">In Progress</h3>
+                                    <p class="text-neon-blue text-sm font-mono" data-en="Cybersecurity Analyst">Cybersecurity Analyst</p>
                                 </div>
                             </div>
                             <div class="space-y-2 font-mono text-sm">
@@ -960,32 +946,32 @@
                 <div class="observation-target text-center">
                     <div class="bg-black bg-opacity-60 neon-border rounded-lg p-6 hover:shadow-lg transition-all duration-300">
                         <i class="fas fa-shield-alt text-4xl text-neon-blue mb-4"></i>
-                        <h4 class="font-semibold text-neon-green mb-2 font-mono" data-es="NIST 800-53" data-en="NIST 800-53">NIST 800-53</h4>
-                        <p class="text-gray-400 text-sm font-mono" data-es="Security Controls" data-en="Security Controls">Security Controls</p>
+                        <h4 class="font-semibold text-neon-green mb-2 font-mono" data-en="NIST 800-53">NIST 800-53</h4>
+                        <p class="text-gray-400 text-sm font-mono" data-en="Security Controls">Security Controls</p>
                     </div>
                 </div>
                 
                 <div class="observation-target text-center">
                     <div class="bg-black bg-opacity-60 neon-border rounded-lg p-6 hover:shadow-lg transition-all duration-300">
                         <i class="fas fa-certificate text-4xl text-neon-purple mb-4"></i>
-                        <h4 class="font-semibold text-neon-green mb-2 font-mono" data-es="SOC 2" data-en="SOC 2">SOC 2</h4>
-                        <p class="text-gray-400 text-sm font-mono" data-es="Compliance Standards" data-en="Compliance Standards">Compliance Standards</p>
+                        <h4 class="font-semibold text-neon-green mb-2 font-mono" data-en="SOC 2">SOC 2</h4>
+                        <p class="text-gray-400 text-sm font-mono" data-en="Compliance Standards">Compliance Standards</p>
                     </div>
                 </div>
                 
                 <div class="observation-target text-center">
                     <div class="bg-black bg-opacity-60 neon-border rounded-lg p-6 hover:shadow-lg transition-all duration-300">
                         <i class="fas fa-cogs text-4xl text-neon-red mb-4"></i>
-                        <h4 class="font-semibold text-neon-green mb-2 font-mono" data-es="Agile Security" data-en="Agile Security">Agile Security</h4>
-                        <p class="text-gray-400 text-sm font-mono" data-es="DevSecOps Methods" data-en="DevSecOps Methods">DevSecOps Methods</p>
+                        <h4 class="font-semibold text-neon-green mb-2 font-mono" data-en="Agile Security">Agile Security</h4>
+                        <p class="text-gray-400 text-sm font-mono" data-en="DevSecOps Methods">DevSecOps Methods</p>
                     </div>
                 </div>
                 
                 <div class="observation-target text-center">
                     <div class="bg-black bg-opacity-60 neon-border rounded-lg p-6 hover:shadow-lg transition-all duration-300">
                         <i class="fas fa-file-contract text-4xl text-neon-green mb-4"></i>
-                        <h4 class="font-semibold text-neon-green mb-2 font-mono" data-es="RFI/ISA" data-en="RFI/ISA">RFI/ISA</h4>
-                        <p class="text-gray-400 text-sm font-mono" data-es="Documentation Expert" data-en="Documentation Expert">Documentation Expert</p>
+                        <h4 class="font-semibold text-neon-green mb-2 font-mono" data-en="RFI/ISA">RFI/ISA</h4>
+                        <p class="text-gray-400 text-sm font-mono" data-en="Documentation Expert">Documentation Expert</p>
                     </div>
                 </div>
             </div>
@@ -999,7 +985,7 @@
         
         <div class="max-w-6xl mx-auto px-6 relative z-10">
             <div class="text-center mb-16">
-                <h2 class="text-5xl font-bold text-neon-blue mb-4 observation-target font-mono glitch" data-text="EDUCATION.LOG" data-es="EDUCATION.LOG" data-en="EDUCATION.LOG">
+                <h2 class="text-5xl font-bold text-neon-blue mb-4 observation-target font-mono glitch" data-text="EDUCATION.LOG" data-en="EDUCATION.LOG">
                     EDUCATION.LOG
                 </h2>
                 <div class="w-32 h-1 bg-neon-green mx-auto mb-8 animate-glow" aria-hidden="true"></div>
@@ -1019,8 +1005,8 @@
                                     <i class="fas fa-graduation-cap text-white text-2xl"></i>
                                 </div>
                                 <div>
-                                    <h3 class="text-xl font-semibold text-neon-green font-mono" data-es="Universidad de Palermo" data-en="Palermo University">Palermo University</h3>
-                                    <p class="text-neon-blue text-sm font-mono" data-es="Analista en Ciberseguridad" data-en="Cybersecurity Analyst">Cybersecurity Analyst</p>
+                                    <h3 class="text-xl font-semibold text-neon-green font-mono" data-en="Palermo University">Palermo University</h3>
+                                    <p class="text-neon-blue text-sm font-mono" data-en="Cybersecurity Analyst">Cybersecurity Analyst</p>
                                 </div>
                             </div>
                             <div class="space-y-2 font-mono text-sm">
@@ -1049,8 +1035,8 @@
                                     <i class="fas fa-laptop-code text-white text-2xl"></i>
                                 </div>
                                 <div>
-                                    <h3 class="text-xl font-semibold text-neon-green font-mono" data-es="Tecnicatura en Informática" data-en="Computer Science Technician">Computer Science Technician</h3>
-                                    <p class="text-neon-blue text-sm font-mono" data-es="Sistemas y Programación" data-en="Systems & Programming">Systems & Programming</p>
+                                    <h3 class="text-xl font-semibold text-neon-green font-mono" data-en="Computer Science Technician">Computer Science Technician</h3>
+                                    <p class="text-neon-blue text-sm font-mono" data-en="Systems & Programming">Systems & Programming</p>
                                 </div>
                             </div>
                             <div class="space-y-2 font-mono text-sm">
@@ -1078,8 +1064,8 @@
                                     <i class="fas fa-school text-white text-2xl"></i>
                                 </div>
                                 <div>
-                                    <h3 class="text-xl font-semibold text-neon-green font-mono" data-es="Sagrado Corazón de Jesus" data-en="Sagrado Corazón de Jesus">Sagrado Corazón de Jesus</h3>
-                                    <p class="text-neon-blue text-sm font-mono" data-es="Bachiller" data-en="High School Graduate">High School Graduate</p>
+                                    <h3 class="text-xl font-semibold text-neon-green font-mono" data-en="Sagrado Corazón de Jesus">Sagrado Corazón de Jesus</h3>
+                                    <p class="text-neon-blue text-sm font-mono" data-en="High School Graduate">High School Graduate</p>
                                 </div>
                             </div>
                             <div class="space-y-2 font-mono text-sm">
@@ -1107,8 +1093,8 @@
                                     <i class="fas fa-infinity text-white text-2xl"></i>
                                 </div>
                                 <div>
-                                    <h3 class="text-xl font-semibold text-neon-green font-mono" data-es="Aprendizaje Continuo" data-en="Continuous Learning">Continuous Learning</h3>
-                                    <p class="text-neon-blue text-sm font-mono" data-es="Certificaciones Profesionales" data-en="Professional Certifications">Professional Certifications</p>
+                                    <h3 class="text-xl font-semibold text-neon-green font-mono" data-en="Continuous Learning">Continuous Learning</h3>
+                                    <p class="text-neon-blue text-sm font-mono" data-en="Professional Certifications">Professional Certifications</p>
                                 </div>
                             </div>
                             <div class="space-y-2 font-mono text-sm">
@@ -1134,9 +1120,9 @@
         <!-- Background Effects -->
         <div class="absolute inset-0 hex-pattern opacity-10" aria-hidden="true"></div>
         
-        <div class="max-w-6xl mx-auto px-6 relative z-10">
+        <div class="max-w-4xl mx-auto px-6 relative z-10">
             <div class="text-center mb-16">
-                <h2 class="text-5xl font-bold text-neon-blue mb-4 observation-target font-mono glitch" data-text="CONTACT.SH" data-es="CONTACT.SH" data-en="CONTACT.SH">
+                <h2 class="text-5xl font-bold text-neon-blue mb-4 observation-target font-mono glitch" data-text="CONTACT.SH">
                     CONTACT.SH
                 </h2>
                 <div class="w-32 h-1 bg-neon-green mx-auto mb-8 animate-glow" aria-hidden="true"></div>
@@ -1145,133 +1131,66 @@
                 </div>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-12">
-                <!-- Contact Information -->
-                <div class="observation-target">
-                    <div class="terminal h-full">
-                        <div class="terminal-header"></div>
-                        <div class="p-8">
-                            <h3 class="text-2xl font-semibold text-neon-green mb-6 font-mono" data-es="Información de Contacto" data-en="Contact Information">Contact Information</h3>
-                            
-                            <div class="space-y-6">
-                                <!-- Email -->
-                                <div class="flex items-center">
-                                    <div class="w-12 h-12 bg-neon-blue bg-opacity-20 rounded-lg flex items-center justify-center mr-4">
-                                        <i class="fas fa-envelope text-neon-blue text-xl"></i>
-                                    </div>
-                                    <div>
-                                        <div class="text-gray-400 text-sm font-mono">EMAIL</div>
-                                        <a href="mailto:sebbas80@gmail.com" class="text-neon-green hover:text-neon-blue transition-colors duration-300 font-mono">sebbas80@gmail.com</a>
-                                    </div>
+            <!-- Contact Information -->
+            <div class="observation-target max-w-2xl mx-auto">
+                <div class="terminal">
+                    <div class="terminal-header"></div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-semibold text-neon-green mb-8 font-mono text-center">Contact Information</h3>
+                        
+                        <div class="space-y-8">
+                            <!-- Email -->
+                            <div class="flex items-center justify-center">
+                                <div class="w-16 h-16 bg-neon-blue bg-opacity-20 rounded-lg flex items-center justify-center mr-6">
+                                    <i class="fas fa-envelope text-neon-blue text-2xl"></i>
                                 </div>
-
-                                <!-- LinkedIn -->
-                                <div class="flex items-center">
-                                    <div class="w-12 h-12 bg-neon-blue bg-opacity-20 rounded-lg flex items-center justify-center mr-4">
-                                        <i class="fab fa-linkedin text-neon-blue text-xl"></i>
-                                    </div>
-                                    <div>
-                                        <div class="text-gray-400 text-sm font-mono">LINKEDIN</div>
-                                        <a href="https://www.linkedin.com/in/sebastian-lopez-a9040918a/" target="_blank" rel="noopener noreferrer" class="text-neon-green hover:text-neon-blue transition-colors duration-300 font-mono">/sebastian-lopez-cybersec</a>
-                                    </div>
-                                </div>
-
-                                <!-- Location -->
-                                <div class="flex items-center">
-                                    <div class="w-12 h-12 bg-neon-green bg-opacity-20 rounded-lg flex items-center justify-center mr-4">
-                                        <i class="fas fa-map-marker-alt text-neon-green text-xl"></i>
-                                    </div>
-                                    <div>
-                                        <div class="text-gray-400 text-sm font-mono">LOCATION</div>
-                                        <span class="text-white font-mono">Buenos Aires, Argentina</span>
-                                    </div>
-                                </div>
-
-                                <!-- Availability -->
-                                <div class="flex items-center">
-                                    <div class="w-12 h-12 bg-neon-purple bg-opacity-20 rounded-lg flex items-center justify-center mr-4">
-                                        <i class="fas fa-clock text-neon-purple text-xl"></i>
-                                    </div>
-                                    <div>
-                                        <div class="text-gray-400 text-sm font-mono">AVAILABILITY</div>
-                                        <span class="text-neon-green font-mono" data-es="Disponible para Consultoría" data-en="Available for Consulting">Available for Consulting</span>
-                                    </div>
+                                <div class="text-center">
+                                    <div class="text-gray-400 text-sm font-mono mb-2">EMAIL</div>
+                                    <a href="mailto:sebbas80@gmail.com" class="text-neon-green hover:text-neon-blue transition-colors duration-300 font-mono text-lg">sebbas80@gmail.com</a>
                                 </div>
                             </div>
 
-                            <!-- Security Notice -->
-                            <div class="mt-8 p-4 bg-neon-green bg-opacity-10 border border-neon-green rounded">
-                                <div class="flex items-center">
-                                    <i class="fas fa-shield-alt text-neon-green mr-3"></i>
-                                    <div>
-                                        <div class="text-neon-green font-mono text-sm font-semibold" data-es="Comunicación Segura" data-en="Secure Communication">Secure Communication</div>
-                                        <div class="text-gray-300 text-xs font-mono mt-1" data-es="Todas las comunicaciones son cifradas y monitoreadas" data-en="All communications are encrypted and monitored">All communications are encrypted and monitored</div>
-                                    </div>
+                            <!-- LinkedIn -->
+                            <div class="flex items-center justify-center">
+                                <div class="w-16 h-16 bg-neon-blue bg-opacity-20 rounded-lg flex items-center justify-center mr-6">
+                                    <i class="fab fa-linkedin text-neon-blue text-2xl"></i>
+                                </div>
+                                <div class="text-center">
+                                    <div class="text-gray-400 text-sm font-mono mb-2">LINKEDIN</div>
+                                    <a href="https://www.linkedin.com/in/sebastian-lopez-a9040918a/" target="_blank" rel="noopener noreferrer" class="text-neon-green hover:text-neon-blue transition-colors duration-300 font-mono text-lg">/sebastian-lopez-cybersec</a>
+                                </div>
+                            </div>
+
+                            <!-- Location -->
+                            <div class="flex items-center justify-center">
+                                <div class="w-16 h-16 bg-neon-green bg-opacity-20 rounded-lg flex items-center justify-center mr-6">
+                                    <i class="fas fa-map-marker-alt text-neon-green text-2xl"></i>
+                                </div>
+                                <div class="text-center">
+                                    <div class="text-gray-400 text-sm font-mono mb-2">LOCATION</div>
+                                    <span class="text-white font-mono text-lg">Buenos Aires, Argentina</span>
+                                </div>
+                            </div>
+
+                            <!-- Availability -->
+                            <div class="flex items-center justify-center">
+                                <div class="w-16 h-16 bg-neon-purple bg-opacity-20 rounded-lg flex items-center justify-center mr-6">
+                                    <i class="fas fa-clock text-neon-purple text-2xl"></i>
+                                </div>
+                                <div class="text-center">
+                                    <div class="text-gray-400 text-sm font-mono mb-2">AVAILABILITY</div>
+                                    <span class="text-neon-green font-mono text-lg">Available for Consulting</span>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
 
-                <!-- Contact Form -->
-                <div class="observation-target">
-                    <div class="terminal h-full">
-                        <div class="terminal-header"></div>
-                        <div class="p-8">
-                            <h3 class="text-2xl font-semibold text-neon-green mb-6 font-mono" data-es="Enviar Mensaje" data-en="Send Message">Send Message</h3>
-                            
-                            <form class="space-y-6" onsubmit="handleContactForm(event)">
-                                <!-- Name -->
-                                <div>
-                                    <label class="block text-gray-400 text-sm font-mono mb-2" for="name" data-es="Nombre Completo" data-en="Full Name">Full Name</label>
-                                    <input type="text" id="name" name="name" required
-                                           class="w-full bg-black bg-opacity-60 border border-gray-600 rounded px-4 py-3 text-white font-mono text-sm focus:border-neon-green focus:outline-none transition-colors duration-300"
-                                           placeholder="Sebastian Lopez...">
-                                </div>
-
-                                <!-- Email -->
-                                <div>
-                                    <label class="block text-gray-400 text-sm font-mono mb-2" for="email" data-es="Correo Electrónico" data-en="Email Address">Email Address</label>
-                                    <input type="email" id="email" name="email" required
-                                           class="w-full bg-black bg-opacity-60 border border-gray-600 rounded px-4 py-3 text-white font-mono text-sm focus:border-neon-green focus:outline-none transition-colors duration-300"
-                                           placeholder="user@domain.com">
-                                </div>
-
-                                <!-- Subject -->
-                                <div>
-                                    <label class="block text-gray-400 text-sm font-mono mb-2" for="subject" data-es="Asunto" data-en="Subject">Subject</label>
-                                    <select id="subject" name="subject" required
-                                            class="w-full bg-black bg-opacity-60 border border-gray-600 rounded px-4 py-3 text-white font-mono text-sm focus:border-neon-green focus:outline-none transition-colors duration-300">
-                                        <option value="" data-es="Seleccionar asunto..." data-en="Select subject...">Select subject...</option>
-                                        <option value="consultation" data-es="Consultoría en Ciberseguridad" data-en="Cybersecurity Consultation">Cybersecurity Consultation</option>
-                                        <option value="pentesting" data-es="Servicios de Pentesting" data-en="Penetration Testing Services">Penetration Testing Services</option>
-                                        <option value="training" data-es="Capacitación y Training" data-en="Training & Education">Training & Education</option>
-                                        <option value="collaboration" data-es="Colaboración Profesional" data-en="Professional Collaboration">Professional Collaboration</option>
-                                        <option value="other" data-es="Otro" data-en="Other">Other</option>
-                                    </select>
-                                </div>
-
-                                <!-- Message -->
-                                <div>
-                                    <label class="block text-gray-400 text-sm font-mono mb-2" for="message" data-es="Mensaje" data-en="Message">Message</label>
-                                    <textarea id="message" name="message" rows="5" required
-                                              class="w-full bg-black bg-opacity-60 border border-gray-600 rounded px-4 py-3 text-white font-mono text-sm focus:border-neon-green focus:outline-none transition-colors duration-300 resize-none"
-                                              placeholder="# Message content here...&#10;$ Your cybersecurity needs or questions"></textarea>
-                                </div>
-
-                                <!-- Submit Button -->
-                                <button type="submit" 
-                                        class="w-full bg-neon-green text-black font-mono font-semibold py-3 px-6 rounded hover:bg-neon-blue hover:text-white transition-all duration-300 transform hover:scale-105">
-                                    <i class="fas fa-paper-plane mr-2"></i>
-                                    <span data-es="Enviar Mensaje Seguro" data-en="Send Secure Message">Send Secure Message</span>
-                                </button>
-                            </form>
-
-                            <!-- Response Status -->
-                            <div id="contact-response" class="mt-4 p-3 rounded hidden">
-                                <div class="flex items-center">
-                                    <i class="fas fa-check-circle mr-2"></i>
-                                    <span class="font-mono text-sm"></span>
+                        <!-- Security Notice -->
+                        <div class="mt-10 p-6 bg-neon-green bg-opacity-10 border border-neon-green rounded">
+                            <div class="flex items-center justify-center">
+                                <i class="fas fa-shield-alt text-neon-green mr-3 text-xl"></i>
+                                <div class="text-center">
+                                    <div class="text-neon-green font-mono text-lg font-semibold">Secure Communication</div>
+                                    <div class="text-gray-300 text-sm font-mono mt-2">All communications are encrypted and monitored</div>
                                 </div>
                             </div>
                         </div>
