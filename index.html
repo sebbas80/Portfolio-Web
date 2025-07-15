@@ -29,7 +29,9 @@
     
     <!-- CSS Dependencies -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://use.fontawesome.com/releases/v6.0.0/css/all.css" rel="stylesheet"></noscript>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Custom Styles -->
@@ -47,6 +49,32 @@
     
     <!-- Performance and Security -->
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    
+    <!-- Icon Loading Verification -->
+    <script>
+        // Verify Font Awesome is loading properly
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                // Check if Font Awesome icons are loading
+                const testIcon = document.createElement('i');
+                testIcon.className = 'fas fa-home';
+                testIcon.style.position = 'absolute';
+                testIcon.style.left = '-9999px';
+                document.body.appendChild(testIcon);
+                
+                const computedStyle = window.getComputedStyle(testIcon, '::before');
+                const content = computedStyle.getPropertyValue('content');
+                
+                // If Font Awesome didn't load, add fallback
+                if (!content || content === 'none' || content === '""') {
+                    console.warn('Font Awesome may not have loaded properly, using fallbacks');
+                    document.body.classList.add('fa-fallback');
+                }
+                
+                document.body.removeChild(testIcon);
+            }, 1500);
+        });
+    </script>
     <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="X-Frame-Options" content="DENY">
@@ -260,7 +288,7 @@
                                 <span class="ml-2 text-white">Sebastian Lopez</span>
                             </div>
                             <div class="flex items-center">
-                                <i class="fas fa-map-marker-alt mr-3 text-neon-green" aria-hidden="true"></i>
+                                <i class="fas fa-location-dot mr-3 text-neon-green" aria-hidden="true"></i>
                                 <span class="text-neon-blue">Location:</span>
                                 <span class="ml-2 text-white" data-en="Buenos Aires, Argentina">Buenos Aires, Argentina</span>
                             </div>
@@ -417,7 +445,7 @@
                         <div class="terminal-header"></div>
                         <div class="p-6">
                             <div class="text-center mb-6">
-                                <i class="fas fa-radar-chart text-4xl text-neon-blue mb-4"></i>
+                                <i class="fas fa-search text-4xl text-neon-blue mb-4"></i>
                                 <h3 class="text-xl font-semibold text-neon-green font-mono" data-en="SIEM & SOAR">SIEM & SOAR</h3>
                             </div>
                             <div class="space-y-3">
@@ -468,7 +496,7 @@
                         <div class="terminal-header"></div>
                         <div class="p-6">
                             <div class="text-center mb-6">
-                                <i class="fas fa-bug text-4xl text-neon-purple mb-4"></i>
+                                <i class="fas fa-shield-virus text-4xl text-neon-purple mb-4"></i>
                                 <h3 class="text-xl font-semibold text-neon-green font-mono" data-en="Penetration Testing">Penetration Testing</h3>
                             </div>
                             <div class="space-y-3">
@@ -519,7 +547,7 @@
                         <div class="terminal-header"></div>
                         <div class="p-6">
                             <div class="text-center mb-6">
-                                <i class="fas fa-cloud-upload-alt text-4xl text-neon-red mb-4"></i>
+                                <i class="fas fa-cloud text-4xl text-neon-red mb-4"></i>
                                 <h3 class="text-xl font-semibold text-neon-green font-mono" data-en="Cloud & Compliance">Cloud & Compliance</h3>
                             </div>
                             <div class="space-y-3">
@@ -625,7 +653,7 @@
                         <div class="terminal-header"></div>
                         <div class="h-48 bg-gradient-to-br from-neon-blue to-blue-600 flex items-center justify-center relative overflow-hidden">
                             <div class="absolute inset-0 bg-black opacity-20"></div>
-                            <i class="fas fa-radar-chart text-6xl text-white relative z-10"></i>
+                            <i class="fas fa-search text-6xl text-white relative z-10"></i>
                             <div class="absolute bottom-2 right-2">
                                 <span class="bg-black bg-opacity-50 text-neon-green px-2 py-1 rounded text-xs font-mono">ENTERPRISE</span>
                             </div>
@@ -639,12 +667,6 @@
                                 <span class="bg-neon-blue bg-opacity-20 text-neon-blue px-2 py-1 rounded text-xs font-mono">RADAR</span>
                                 <span class="bg-neon-green bg-opacity-20 text-neon-green px-2 py-1 rounded text-xs font-mono">Splunk</span>
                                 <span class="bg-neon-purple bg-opacity-20 text-neon-purple px-2 py-1 rounded text-xs font-mono">SOAR</span>
-                            </div>
-                            <div class="flex space-x-4">
-                                <button class="text-neon-blue hover:text-neon-green transition-colors duration-300 font-mono text-sm">
-                                    <i class="fas fa-eye mr-1"></i>
-                                    <span data-en="View Details">View Details</span>
-                                </button>
                             </div>
                         </div>
                     </div>
@@ -671,12 +693,6 @@
                                 <span class="bg-neon-red bg-opacity-20 text-neon-red px-2 py-1 rounded text-xs font-mono">Real-time</span>
                                 <span class="bg-neon-blue bg-opacity-20 text-neon-blue px-2 py-1 rounded text-xs font-mono">Fintech</span>
                             </div>
-                            <div class="flex space-x-4">
-                                <button class="text-neon-blue hover:text-neon-green transition-colors duration-300 font-mono text-sm">
-                                    <i class="fas fa-eye mr-1"></i>
-                                    <span data-en="View Details">View Details</span>
-                                </button>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -687,7 +703,7 @@
                         <div class="terminal-header"></div>
                         <div class="h-48 bg-gradient-to-br from-neon-green to-green-600 flex items-center justify-center relative overflow-hidden">
                             <div class="absolute inset-0 bg-black opacity-20"></div>
-                            <i class="fas fa-cloud-upload-alt text-6xl text-white relative z-10"></i>
+                            <i class="fas fa-cloud text-6xl text-white relative z-10"></i>
                             <div class="absolute bottom-2 right-2">
                                 <span class="bg-black bg-opacity-50 text-neon-blue px-2 py-1 rounded text-xs font-mono">CLOUD</span>
                             </div>
@@ -701,12 +717,6 @@
                                 <span class="bg-neon-blue bg-opacity-20 text-neon-blue px-2 py-1 rounded text-xs font-mono">Azure</span>
                                 <span class="bg-neon-red bg-opacity-20 text-neon-red px-2 py-1 rounded text-xs font-mono">AWS</span>
                                 <span class="bg-neon-green bg-opacity-20 text-neon-green px-2 py-1 rounded text-xs font-mono">NIST</span>
-                            </div>
-                            <div class="flex space-x-4">
-                                <button class="text-neon-blue hover:text-neon-green transition-colors duration-300 font-mono text-sm">
-                                    <i class="fas fa-eye mr-1"></i>
-                                    <span data-en="View Details">View Details</span>
-                                </button>
                             </div>
                         </div>
                     </div>
@@ -733,12 +743,6 @@
                                 <span class="bg-neon-blue bg-opacity-20 text-neon-blue px-2 py-1 rounded text-xs font-mono">Training</span>
                                 <span class="bg-neon-purple bg-opacity-20 text-neon-purple px-2 py-1 rounded text-xs font-mono">Awareness</span>
                             </div>
-                            <div class="flex space-x-4">
-                                <button class="text-neon-blue hover:text-neon-green transition-colors duration-300 font-mono text-sm">
-                                    <i class="fas fa-eye mr-1"></i>
-                                    <span data-en="View Details">View Details</span>
-                                </button>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -749,7 +753,7 @@
                         <div class="terminal-header"></div>
                         <div class="h-48 bg-gradient-to-br from-yellow-500 to-orange-600 flex items-center justify-center relative overflow-hidden">
                             <div class="absolute inset-0 bg-black opacity-20"></div>
-                            <i class="fas fa-network-wired text-6xl text-white relative z-10"></i>
+                            <i class="fas fa-sitemap text-6xl text-white relative z-10"></i>
                             <div class="absolute bottom-2 right-2">
                                 <span class="bg-black bg-opacity-50 text-neon-purple px-2 py-1 rounded text-xs font-mono">AUTOMATION</span>
                             </div>
@@ -763,12 +767,6 @@
                                 <span class="bg-yellow-500 bg-opacity-20 text-yellow-400 px-2 py-1 rounded text-xs font-mono">Fortinet</span>
                                 <span class="bg-neon-blue bg-opacity-20 text-neon-blue px-2 py-1 rounded text-xs font-mono">Python</span>
                                 <span class="bg-neon-green bg-opacity-20 text-neon-green px-2 py-1 rounded text-xs font-mono">Automation</span>
-                            </div>
-                            <div class="flex space-x-4">
-                                <button class="text-neon-blue hover:text-neon-green transition-colors duration-300 font-mono text-sm">
-                                    <i class="fas fa-eye mr-1"></i>
-                                    <span data-en="View Details">View Details</span>
-                                </button>
                             </div>
                         </div>
                     </div>
@@ -794,12 +792,6 @@
                                 <span class="bg-pink-500 bg-opacity-20 text-pink-400 px-2 py-1 rounded text-xs font-mono">Carbon Black</span>
                                 <span class="bg-neon-red bg-opacity-20 text-neon-red px-2 py-1 rounded text-xs font-mono">Risk Assessment</span>
                                 <span class="bg-neon-purple bg-opacity-20 text-neon-purple px-2 py-1 rounded text-xs font-mono">Continuous</span>
-                            </div>
-                            <div class="flex space-x-4">
-                                <button class="text-neon-blue hover:text-neon-green transition-colors duration-300 font-mono text-sm">
-                                    <i class="fas fa-eye mr-1"></i>
-                                    <span data-en="View Details">View Details</span>
-                                </button>
                             </div>
                         </div>
                     </div>

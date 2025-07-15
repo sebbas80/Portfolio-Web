@@ -21,6 +21,15 @@ class PortfolioApp {
         this.initTerminalText();
         this.loadSavedPreferences();
         this.startAnimations();
+        
+        // Check icons after delays to ensure Font Awesome has loaded
+        setTimeout(() => {
+            this.checkAndFixIcons();
+        }, 1000);
+        
+        setTimeout(() => {
+            this.forceIconRefresh();
+        }, 2000);
     }
 
     setupEventListeners() {
@@ -401,6 +410,68 @@ class PortfolioApp {
         const animatedElements = document.querySelectorAll('.animate-slide-up');
         animatedElements.forEach((element, index) => {
             element.style.animationDelay = `${index * 0.1}s`;
+        });
+    }
+
+    /**
+     * Check and fix missing icons
+     */
+    checkAndFixIcons() {
+        // Icon fallback mapping
+        const iconFallbacks = {
+            'fa-radar-chart': 'fa-search',
+            'fa-cloud-upload-alt': 'fa-cloud',
+            'fa-network-wired': 'fa-sitemap',
+            'fa-map-marker-alt': 'fa-location-dot',
+            'fa-bug': 'fa-shield-virus'
+        };
+
+        // Check each icon element
+        document.querySelectorAll('i[class*="fa-"]').forEach(icon => {
+            const classes = Array.from(icon.classList);
+            const iconClass = classes.find(cls => cls.startsWith('fa-') && cls !== 'fas' && cls !== 'fab' && cls !== 'far');
+            
+            if (iconClass && iconFallbacks[iconClass]) {
+                // Check if icon is visible/rendered properly
+                const computedStyle = window.getComputedStyle(icon, '::before');
+                const content = computedStyle.getPropertyValue('content');
+                
+                // If content is empty or default, replace with fallback
+                if (!content || content === 'none' || content === '""') {
+                    icon.classList.remove(iconClass);
+                    icon.classList.add(iconFallbacks[iconClass]);
+                }
+            }
+        });
+    }
+
+    /**
+     * Force icon refresh if Font Awesome fails to load
+     */
+    forceIconRefresh() {
+        // Critical icons that must be visible
+        const criticalIcons = [
+            { selector: '.fas.fa-linux', fallback: 'fa-terminal' },
+            { selector: '.fas.fa-search', fallback: 'fa-magnifying-glass' },
+            { selector: '.fas.fa-shield-virus', fallback: 'fa-shield' },
+            { selector: '.fas.fa-cloud', fallback: 'fa-server' },
+            { selector: '.fas.fa-sitemap', fallback: 'fa-diagram-project' }
+        ];
+
+        criticalIcons.forEach(({ selector, fallback }) => {
+            const elements = document.querySelectorAll(selector);
+            elements.forEach(element => {
+                // Force refresh by removing and re-adding the icon class
+                const originalClasses = Array.from(element.classList);
+                const iconClass = originalClasses.find(cls => cls.startsWith('fa-') && cls !== 'fas' && cls !== 'fab');
+                
+                if (iconClass) {
+                    element.classList.remove(iconClass);
+                    setTimeout(() => {
+                        element.classList.add(iconClass);
+                    }, 100);
+                }
+            });
         });
     }
 

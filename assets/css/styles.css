@@ -199,6 +199,64 @@ body {
     transition: filter 0.3s ease;
 }
 
+/* Icon Fallback Styles */
+.fas, .fab, .far {
+    min-width: 1em;
+    min-height: 1em;
+    display: inline-block;
+    position: relative;
+}
+
+/* Ensure icons have proper fallback content */
+.fas::before, .fab::before, .far::before {
+    content: attr(data-fallback, "⚡");
+    font-family: inherit;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+}
+
+/* Specific icon fallbacks */
+.fa-linux::before {
+    content: "🐧";
+}
+
+.fa-search::before {
+    content: "🔍";
+}
+
+.fa-shield-virus::before {
+    content: "🛡️";
+}
+
+.fa-cloud::before {
+    content: "☁️";
+}
+
+.fa-sitemap::before {
+    content: "🌐";
+}
+
+.fa-terminal::before {
+    content: "💻";
+}
+
+.fa-users::before {
+    content: "👥";
+}
+
+.fa-code::before {
+    content: "💻";
+}
+
+.fa-graduation-cap::before {
+    content: "🎓";
+}
+
+.fa-shield-alt::before {
+    content: "🛡️";
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .glitch {
