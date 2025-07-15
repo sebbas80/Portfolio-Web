@@ -473,11 +473,53 @@ class PortfolioApp {
     }
 }
 
-// Global functions for backward compatibility
-function scrollToSection(sectionId) {
-    if (window.portfolioApp) {
-        window.portfolioApp.scrollToSection(sectionId);
-    }
+// Global function for contact form handling (used by onsubmit attribute)
+function handleContactForm(e) {
+    e.preventDefault();
+    
+    const form = e.target;
+    const submitButton = form.querySelector('button[type="submit"]');
+    const responseDiv = document.getElementById('contact-response');
+    const originalText = submitButton.innerHTML;
+    
+    // Update button state
+    submitButton.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i><span data-es="Enviando..." data-en="Sending...">Sending...</span>';
+    submitButton.disabled = true;
+    
+    // Hide previous response
+    responseDiv.classList.add('hidden');
+    
+    // Simulate form submission with enhanced feedback
+    setTimeout(() => {
+        // Show success message
+        responseDiv.className = 'mt-4 p-3 rounded bg-neon-green bg-opacity-10 border border-neon-green';
+        responseDiv.innerHTML = `
+            <div class="flex items-center">
+                <i class="fas fa-check-circle text-neon-green mr-2"></i>
+                <span class="font-mono text-sm text-neon-green" data-es="Mensaje enviado con éxito. Te contactaré pronto." data-en="Message sent successfully. I'll contact you soon.">Message sent successfully. I'll contact you soon.</span>
+            </div>
+        `;
+        responseDiv.classList.remove('hidden');
+        
+        // Update button to success state
+        submitButton.innerHTML = '<i class="fas fa-check mr-2"></i><span data-es="¡Mensaje Enviado!" data-en="Message Sent!">Message Sent!</span>';
+        submitButton.classList.remove('bg-neon-green', 'hover:bg-neon-blue');
+        submitButton.classList.add('bg-green-600', 'hover:bg-green-700');
+        
+        // Reset after delay
+        setTimeout(() => {
+            submitButton.innerHTML = originalText;
+            submitButton.disabled = false;
+            submitButton.classList.remove('bg-green-600', 'hover:bg-green-700');
+            submitButton.classList.add('bg-neon-green', 'hover:bg-neon-blue');
+            form.reset();
+            
+            // Hide response message
+            setTimeout(() => {
+                responseDiv.classList.add('hidden');
+            }, 3000);
+        }, 2000);
+    }, 1500);
 }
 
 // Initialize the application when DOM is loaded
