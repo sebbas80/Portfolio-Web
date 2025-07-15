@@ -3,899 +3,349 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sebastian Lopez - Security Specialist</title>
+    <meta name="description" content="Sebastian Lopez - Cybersecurity Specialist. Expert in SIEM/SOAR, Threat Hunting, Penetration Testing, and Cloud Security.">
+    <meta name="keywords" content="cybersecurity, SIEM, SOAR, penetration testing, threat hunting, security analyst, Azure security, AWS security">
+    <meta name="author" content="Sebastian Lopez">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Sebastian Lopez - Cybersecurity Specialist">
+    <meta property="og:description" content="Expert in cybersecurity, threat hunting, and penetration testing. Specialized in SIEM/SOAR platforms and cloud security.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sebastianlopez.dev">
+    <meta property="og:image" content="https://sebastianlopez.dev/assets/images/og-image.jpg">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Sebastian Lopez - Cybersecurity Specialist">
+    <meta name="twitter:description" content="Expert in cybersecurity, threat hunting, and penetration testing.">
+    <meta name="twitter:image" content="https://sebastianlopez.dev/assets/images/twitter-card.jpg">
+    
+    <title>Sebastian Lopez - Cybersecurity Specialist | Security Expert</title>
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="./assets/css/styles.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600&family=Inter:wght@300;400;500;600;700&display=swap" as="style">
+    
+    <!-- CSS Dependencies -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    animation: {
-                        'fade-in': 'fadeIn 0.8s ease-in-out',
-                        'slide-up': 'slideUp 0.6s ease-out',
-                        'bounce-in': 'bounceIn 0.8s ease-out',
-                        'float': 'float 3s ease-in-out infinite',
-                    },
-                    keyframes: {
-                        fadeIn: {
-                            '0%': { opacity: '0' },
-                            '100%': { opacity: '1' }
-                        },
-                        slideUp: {
-                            '0%': { transform: 'translateY(50px)', opacity: '0' },
-                            '100%': { transform: 'translateY(0)', opacity: '1' }
-                        },
-                        bounceIn: {
-                            '0%': { transform: 'scale(0.3)', opacity: '0' },
-                            '50%': { transform: 'scale(1.05)' },
-                            '70%': { transform: 'scale(0.9)' },
-                            '100%': { transform: 'scale(1)', opacity: '1' }
-                        },
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0px)' },
-                            '50%': { transform: 'translateY(-20px)' }
-                        }
-                    }
-                }
-            }
-        }
-    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    
+    <!-- Tailwind Configuration -->
+    <script src="./assets/js/tailwind.config.js"></script>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/favicon-16x16.png">
+    
+    <!-- Performance and Security -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
 </head>
-<body class="bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
-    <!-- Language Toggle -->
-    <div class="fixed top-4 right-4 z-50">
-        <button id="langToggle" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105">
-            <i class="fas fa-globe mr-2"></i>
+<body class="bg-dark-bg text-white overflow-x-hidden">
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-neon-blue text-black px-4 py-2 rounded z-50">Skip to main content</a>
+    
+    <!-- Matrix Rain Background -->
+    <canvas id="matrixCanvas" class="matrix-bg" aria-hidden="true"></canvas>
+    
+    <!-- Particle System -->
+    <div id="particles" aria-hidden="true"></div>
+    
+    <!-- Control Panel -->
+    <div class="fixed top-4 right-4 z-50 flex space-x-2">
+        <!-- Language Toggle -->
+        <button id="langToggle" 
+                class="bg-black bg-opacity-80 neon-border text-neon-blue px-4 py-2 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105 font-mono"
+                aria-label="Toggle Language">
+            <i class="fas fa-globe mr-2" aria-hidden="true"></i>
             <span id="langText">EN</span>
         </button>
-    </div>
-
-    <!-- Dark Mode Toggle -->
-    <div class="fixed top-4 right-20 z-50">
-        <button id="darkModeToggle" class="bg-gray-800 hover:bg-gray-700 text-white px-4 py-2 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105">
-            <i class="fas fa-moon" id="darkModeIcon"></i>
+        
+        <!-- Theme Toggle -->
+        <button id="themeToggle" 
+                class="bg-black bg-opacity-80 neon-border text-neon-green px-4 py-2 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105 font-mono"
+                aria-label="Toggle Theme">
+            <i class="fas fa-terminal" id="themeIcon" aria-hidden="true"></i>
         </button>
     </div>
 
     <!-- Header/Hero Section -->
-    <header class="min-h-screen bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-800 relative overflow-hidden">
+    <header class="min-h-screen relative overflow-hidden" role="banner">
+        <!-- Background Effects -->
+        <div class="absolute inset-0 circuit" aria-hidden="true"></div>
+        <div class="absolute inset-0 hex-pattern" aria-hidden="true"></div>
+        <div class="scan-line" aria-hidden="true"></div>
+        
         <!-- Animated Background Elements -->
-        <div class="absolute inset-0">
-            <div class="absolute top-20 left-20 w-72 h-72 bg-white opacity-10 rounded-full animate-float"></div>
-            <div class="absolute bottom-20 right-20 w-96 h-96 bg-white opacity-5 rounded-full animate-float" style="animation-delay: 1s;"></div>
-            <div class="absolute top-1/2 left-1/2 w-64 h-64 bg-white opacity-5 rounded-full animate-float" style="animation-delay: 2s;"></div>
+        <div class="absolute inset-0 z-10" aria-hidden="true">
+            <div class="absolute top-20 left-20 w-72 h-72 bg-neon-blue opacity-5 rounded-full animate-float blur-xl"></div>
+            <div class="absolute bottom-20 right-20 w-96 h-96 bg-neon-green opacity-5 rounded-full animate-float blur-xl" style="animation-delay: 1s;"></div>
+            <div class="absolute top-1/2 left-1/2 w-64 h-64 bg-neon-purple opacity-5 rounded-full animate-float blur-xl" style="animation-delay: 2s;"></div>
         </div>
 
         <!-- Navigation -->
-        <nav class="relative z-10 flex justify-between items-center p-6">
-            <div class="text-white text-2xl font-bold animate-fade-in">
-                <span data-es="SL" data-en="SL">SL</span>
+        <nav class="relative z-20 flex justify-between items-center p-6 bg-black bg-opacity-30 backdrop-blur-sm" role="navigation">
+            <div class="text-neon-blue text-2xl font-bold font-mono animate-glow">
+                <span class="glitch" data-text="SL" data-es="SL" data-en="SL">SL</span>
             </div>
-            <div class="hidden md:flex space-x-8 text-white">
-                <a href="#about" class="hover:text-blue-200 transition-colors duration-300" data-es="Acerca de" data-en="About">Acerca de</a>
-                <a href="#experience" class="hover:text-blue-200 transition-colors duration-300" data-es="Experiencia" data-en="Experience">Experiencia</a>
-                <a href="#skills" class="hover:text-blue-200 transition-colors duration-300" data-es="Habilidades" data-en="Skills">Habilidades</a>
-                <a href="#projects" class="hover:text-blue-200 transition-colors duration-300" data-es="Proyectos" data-en="Projects">Proyectos</a>
-                <a href="#certifications" class="hover:text-blue-200 transition-colors duration-300" data-es="Certificaciones" data-en="Certifications">Certificaciones</a>
-                <a href="#contact" class="hover:text-blue-200 transition-colors duration-300" data-es="Contacto" data-en="Contact">Contacto</a>
+            <div class="hidden md:flex space-x-8 font-mono">
+                <a href="#about" class="text-neon-blue hover:text-neon-green transition-colors duration-300 hover:animate-glow" data-es="~/about" data-en="~/about">~/about</a>
+                <a href="#experience" class="text-neon-blue hover:text-neon-green transition-colors duration-300 hover:animate-glow" data-es="~/experience" data-en="~/experience">~/experience</a>
+                <a href="#skills" class="text-neon-blue hover:text-neon-green transition-colors duration-300 hover:animate-glow" data-es="~/skills" data-en="~/skills">~/skills</a>
+                <a href="#projects" class="text-neon-blue hover:text-neon-green transition-colors duration-300 hover:animate-glow" data-es="~/projects" data-en="~/projects">~/projects</a>
+                <a href="#certifications" class="text-neon-blue hover:text-neon-green transition-colors duration-300 hover:animate-glow" data-es="~/certs" data-en="~/certs">~/certs</a>
+                <a href="#contact" class="text-neon-blue hover:text-neon-green transition-colors duration-300 hover:animate-glow" data-es="~/contact" data-en="~/contact">~/contact</a>
             </div>
         </nav>
 
         <!-- Hero Content -->
-        <div class="relative z-10 flex items-center justify-center min-h-screen px-6">
-            <div class="text-center text-white max-w-4xl">
-                <div class="animate-bounce-in">
-                    <img src="https://via.placeholder.com/200x200/4F46E5/FFFFFF?text=SL" alt="Sebastian Lopez" class="w-32 h-32 rounded-full mx-auto mb-6 border-4 border-white shadow-2xl">
+        <main id="main-content" class="relative z-20 flex items-center justify-center min-h-screen px-6">
+            <div class="text-center max-w-6xl">
+                <!-- Terminal Window -->
+                <div class="terminal mx-auto max-w-4xl mb-8 animate-slide-up">
+                    <div class="terminal-header"></div>
+                    <div class="p-6 font-mono text-left">
+                        <div class="text-neon-green mb-2">
+                            <span class="text-neon-blue">sebastianlopez@cybersec</span>:<span class="text-neon-purple">~</span>$ whoami
+                        </div>
+                        <div class="text-white mb-4 typing-animation" id="terminalText">
+                            Loading profile...
+                        </div>
+                        <div class="text-neon-green">
+                            <span class="text-neon-blue">sebastianlopez@cybersec</span>:<span class="text-neon-purple">~</span>$ _
+                        </div>
+                    </div>
                 </div>
-                <h1 class="text-5xl md:text-7xl font-bold mb-6 animate-slide-up" data-es="Sebastian Lopez" data-en="Sebastian Lopez">Sebastian Lopez</h1>
-                <p class="text-xl md:text-2xl mb-8 text-blue-100 animate-slide-up" style="animation-delay: 0.2s;" data-es="Security Specialist | Threat Hunting | Red & Blue Team" data-en="Security Specialist | Threat Hunting | Red & Blue Team">Security Specialist | Threat Hunting | Red & Blue Team</p>
-                <p class="text-lg mb-10 text-blue-50 max-w-2xl mx-auto animate-slide-up" style="animation-delay: 0.4s;" data-es="Especialista en ciberseguridad con experiencia en SIEM, SOAR, y seguridad en Azure/AWS, dedicado a proteger sistemas de información" data-en="Cybersecurity specialist with expertise in SIEM, SOAR, and Azure/AWS security, dedicated to safeguarding information systems">Especialista en ciberseguridad con experiencia en SIEM, SOAR, y seguridad en Azure/AWS, dedicado a proteger sistemas de información</p>
                 
-                <!-- Social Links -->
-                <div class="flex justify-center space-x-6 mb-10 animate-slide-up" style="animation-delay: 0.6s;">
-                    <a href="https://www.linkedin.com/in/sebastian-lopez-a9040918a/" target="_blank" class="bg-white bg-opacity-20 hover:bg-opacity-30 p-3 rounded-full transition-all duration-300 transform hover:scale-110">
-                        <i class="fab fa-linkedin-in text-2xl"></i>
+                <!-- Profile Image with Glitch Effect -->
+                <div class="relative inline-block mb-8 animate-bounce-in">
+                    <div class="w-40 h-40 rounded-full mx-auto border-4 neon-border bg-black bg-opacity-50 flex items-center justify-center">
+                        <i class="fas fa-user-secret text-6xl text-neon-blue animate-glow" aria-hidden="true"></i>
+                    </div>
+                    <div class="absolute inset-0 w-40 h-40 rounded-full mx-auto border-2 border-neon-green animate-ping opacity-20" aria-hidden="true"></div>
+                </div>
+                
+                <h1 class="text-6xl md:text-8xl font-bold mb-6 animate-slide-up glitch text-white font-mono" data-text="SEBASTIAN LOPEZ">
+                    SEBASTIAN LOPEZ
+                </h1>
+                
+                <div class="text-2xl md:text-3xl mb-8 text-neon-green animate-slide-up font-mono" style="animation-delay: 0.2s;">
+                    <span class="typing-animation" id="roleText">Security Specialist</span>
+                </div>
+                
+                <div class="text-lg mb-10 text-gray-300 max-w-3xl mx-auto animate-slide-up font-mono leading-relaxed" style="animation-delay: 0.4s;">
+                    <span class="text-neon-blue">[</span>
+                    <span data-es="ESPECIALISTA EN CIBERSEGURIDAD | THREAT HUNTING | RED & BLUE TEAM" data-en="CYBERSECURITY SPECIALIST | THREAT HUNTING | RED & BLUE TEAM">
+                        CYBERSECURITY SPECIALIST | THREAT HUNTING | RED & BLUE TEAM
+                    </span>
+                    <span class="text-neon-blue">]</span>
+                </div>
+                
+                <!-- Command Line Style Social Links -->
+                <div class="flex justify-center space-x-8 mb-10 animate-slide-up font-mono" style="animation-delay: 0.6s;">
+                    <a href="https://www.linkedin.com/in/sebastian-lopez-a9040918a/" target="_blank" rel="noopener noreferrer"
+                       class="bg-black bg-opacity-80 neon-border text-neon-blue px-4 py-2 rounded transition-all duration-300 transform hover:scale-110 hover:text-neon-green"
+                       aria-label="LinkedIn Profile">
+                        <i class="fab fa-linkedin-in mr-2" aria-hidden="true"></i>./linkedin
                     </a>
-                    <a href="#" target="_blank" class="bg-white bg-opacity-20 hover:bg-opacity-30 p-3 rounded-full transition-all duration-300 transform hover:scale-110">
-                        <i class="fab fa-github text-2xl"></i>
+                    <a href="#" target="_blank" rel="noopener noreferrer"
+                       class="bg-black bg-opacity-80 neon-border text-neon-blue px-4 py-2 rounded transition-all duration-300 transform hover:scale-110 hover:text-neon-green"
+                       aria-label="GitHub Profile">
+                        <i class="fab fa-github mr-2" aria-hidden="true"></i>./github
                     </a>
-                    <a href="#" target="_blank" class="bg-white bg-opacity-20 hover:bg-opacity-30 p-3 rounded-full transition-all duration-300 transform hover:scale-110">
-                        <i class="fas fa-envelope text-2xl"></i>
+                    <a href="#contact" 
+                       class="bg-black bg-opacity-80 neon-border text-neon-blue px-4 py-2 rounded transition-all duration-300 transform hover:scale-110 hover:text-neon-green"
+                       aria-label="Contact Information">
+                        <i class="fas fa-envelope mr-2" aria-hidden="true"></i>./contact
                     </a>
                 </div>
 
                 <!-- CTA Button -->
-                <button onclick="scrollToSection('about')" class="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 animate-slide-up" style="animation-delay: 0.8s;" data-es="Conoce más sobre mí" data-en="Learn more about me">Conoce más sobre mí</button>
+                <button onclick="scrollToSection('about')" 
+                        class="bg-black bg-opacity-80 neon-border text-neon-green px-8 py-3 rounded font-semibold transition-all duration-300 transform hover:scale-105 animate-slide-up font-mono hover:bg-neon-green hover:text-black" 
+                        style="animation-delay: 0.8s;"
+                        aria-label="View Profile">
+                    <span data-es="$ cat /profile" data-en="$ cat /profile">$ cat /profile</span>
+                </button>
             </div>
-        </div>
+        </main>
 
         <!-- Scroll Indicator -->
-        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
-            <i class="fas fa-chevron-down text-2xl"></i>
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-neon-blue animate-bounce z-20" aria-hidden="true">
+            <div class="flex flex-col items-center">
+                <span class="font-mono text-sm mb-2">scroll_down</span>
+                <i class="fas fa-chevron-down text-2xl animate-glow"></i>
+            </div>
         </div>
     </header>
 
     <!-- About Section -->
-    <section id="about" class="py-20 bg-white dark:bg-gray-800">
-        <div class="max-w-6xl mx-auto px-6">
+    <section id="about" class="py-20 bg-black bg-opacity-50 relative">
+        <!-- Background Effects -->
+        <div class="absolute inset-0 hex-pattern opacity-20" aria-hidden="true"></div>
+        
+        <div class="max-w-6xl mx-auto px-6 relative z-10">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-800 dark:text-white mb-4 observation-target" data-es="Acerca de Mí" data-en="About Me">Acerca de Mí</h2>
-                <div class="w-24 h-1 bg-blue-600 mx-auto mb-8"></div>
+                <h2 class="text-5xl font-bold text-neon-blue mb-4 observation-target font-mono glitch" data-text="ABOUT.EXE" data-es="ABOUT.EXE" data-en="ABOUT.EXE">
+                    ABOUT.EXE
+                </h2>
+                <div class="w-32 h-1 bg-neon-green mx-auto mb-8 animate-glow" aria-hidden="true"></div>
+                <div class="text-neon-green font-mono">
+                    <span class="text-neon-blue">$</span> cat sebastian_lopez.txt
+                </div>
             </div>
             
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <div class="observation-target">
-                    <h3 class="text-2xl font-semibold text-gray-800 dark:text-white mb-6" data-es="Mi Historia" data-en="My Story">Mi Historia</h3>
-                    <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed" data-es="Soy un especialista en ciberseguridad con amplia experiencia en SIEM, SOAR y seguridad en Azure/AWS, dedicado a proteger sistemas de información mediante detección proactiva de amenazas y gestión de riesgos. Me especializo en identificar y mitigar ciberamenazas, implementar controles de seguridad y realizar evaluaciones de vulnerabilidades." data-en="I'm a cybersecurity specialist with extensive experience in SIEM, SOAR, and Azure/AWS security, dedicated to protecting information systems through proactive threat detection and risk management. I specialize in identifying and mitigating cyber threats, implementing security controls, and conducting vulnerability assessments.">
-                        Soy un especialista en ciberseguridad con amplia experiencia en SIEM, SOAR y seguridad en Azure/AWS, dedicado a proteger sistemas de información mediante detección proactiva de amenazas y gestión de riesgos. Me especializo en identificar y mitigar ciberamenazas, implementar controles de seguridad y realizar evaluaciones de vulnerabilidades.
-                    </p>
-                    <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed" data-es="Tengo experiencia en pentesting Web2 y Web3, operaciones de Red & Blue Team, y cumplimiento normativo con frameworks NIST, OWASP y MITRE ATT&CK. Mi rol incluye monitoreo continuo, auditorías de seguridad, gestión de controles de acceso y capacitación en prevención de ciberamenazas." data-en="I have experience in Web2 & Web3 pentesting, Red & Blue Team operations, and regulatory compliance with NIST, OWASP, and MITRE ATT&CK frameworks. My role includes continuous monitoring, security audits, access control management, and training in cyber threat prevention.">
-                        Tengo experiencia en pentesting Web2 y Web3, operaciones de Red & Blue Team, y cumplimiento normativo con frameworks NIST, OWASP y MITRE ATT&CK. Mi rol incluye monitoreo continuo, auditorías de seguridad, gestión de controles de acceso y capacitación en prevención de ciberamenazas.
-                    </p>
+                    <!-- Terminal About -->
+                    <div class="terminal mb-8">
+                        <div class="terminal-header"></div>
+                        <div class="p-6 font-mono text-sm">
+                            <div class="text-neon-green mb-2"># Personal Profile</div>
+                            <div class="text-gray-300 mb-4">
+                                <span class="text-neon-blue">Name:</span> Sebastian Lopez<br>
+                                <span class="text-neon-blue">Role:</span> Security Specialist<br>
+                                <span class="text-neon-blue">Specialization:</span> Threat Hunting | Red/Blue Team<br>
+                                <span class="text-neon-blue">Location:</span> Buenos Aires, Argentina<br>
+                                <span class="text-neon-blue">Status:</span> <span class="text-neon-green">ONLINE</span>
+                            </div>
+                            <div class="text-neon-green mb-2"># Skills Overview</div>
+                            <div class="text-gray-300">
+                                SIEM/SOAR [████████████] 95%<br>
+                                Penetration Testing [██████████░░] 90%<br>
+                                Incident Response [███████████░] 88%<br>
+                                Azure/AWS Security [████████████] 92%
+                            </div>
+                        </div>
+                    </div>
                     
-                    <!-- Stats -->
-                    <div class="grid grid-cols-3 gap-4 mt-8">
-                        <div class="text-center">
-                            <div class="text-3xl font-bold text-blue-600 counter" data-target="100">0</div>
-                            <div class="text-sm text-gray-500 dark:text-gray-400" data-es="Incidentes Resueltos" data-en="Incidents Resolved">Incidentes Resueltos</div>
-                        </div>
-                        <div class="text-center">
-                            <div class="text-3xl font-bold text-blue-600 counter" data-target="3">0</div>
-                            <div class="text-sm text-gray-500 dark:text-gray-400" data-es="Años Exp." data-en="Years Exp.">Años Exp.</div>
-                        </div>
-                        <div class="text-center">
-                            <div class="text-3xl font-bold text-blue-600 counter" data-target="308">0</div>
-                            <div class="text-sm text-gray-500 dark:text-gray-400" data-es="Contactos" data-en="Contacts">Contactos</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="observation-target">
-                    <div class="bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl p-8 text-white">
-                        <h3 class="text-2xl font-semibold mb-6" data-es="Información Personal" data-en="Personal Information">Información Personal</h3>
-                        <div class="space-y-4">
-                            <div class="flex items-center">
-                                <i class="fas fa-user mr-3 text-blue-200"></i>
-                                <span data-es="Sebastian Lopez" data-en="Sebastian Lopez">Sebastian Lopez</span>
-                            </div>
-                            <div class="flex items-center">
-                                <i class="fas fa-map-marker-alt mr-3 text-blue-200"></i>
-                                <span data-es="Mendel, Buenos Aires, Argentina" data-en="Mendel, Buenos Aires, Argentina">Mendel, Buenos Aires, Argentina</span>
-                            </div>
-                            <div class="flex items-center">
-                                <i class="fas fa-envelope mr-3 text-blue-200"></i>
-                                <span>sebastian.lopez@example.com</span>
-                            </div>
-                            <div class="flex items-center">
-                                <i class="fas fa-phone mr-3 text-blue-200"></i>
-                                <span>+54 (11) 1234-5678</span>
-                            </div>
-                            <div class="flex items-center">
-                                <i class="fas fa-graduation-cap mr-3 text-blue-200"></i>
-                                <span data-es="Tecnicatura en Informática" data-en="Computer Science Technician">Tecnicatura en Informática</span>
-                            </div>
-                            <div class="flex items-center">
-                                <i class="fas fa-shield-alt mr-3 text-blue-200"></i>
-                                <span data-es="Microsoft Security Certified" data-en="Microsoft Security Certified">Microsoft Security Certified</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="py-20 bg-gray-50 dark:bg-gray-900">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-800 dark:text-white mb-4 observation-target" data-es="Experiencia Profesional" data-en="Professional Experience">Experiencia Profesional</h2>
-                <div class="w-24 h-1 bg-blue-600 mx-auto mb-8"></div>
-            </div>
-
-            <div class="relative">
-                <!-- Timeline Line -->
-                <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-blue-600 hidden md:block"></div>
-
-                <!-- Experience Items -->
-                <div class="space-y-12">
-                    <!-- Experience 1 -->
-                    <div class="flex flex-col md:flex-row items-center observation-target">
-                        <div class="md:w-1/2 md:pr-8 mb-4 md:mb-0">
-                            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-                                <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-2" data-es="Security Specialist" data-en="Security Specialist">Security Specialist</h3>
-                                <p class="text-blue-600 font-medium mb-2" data-es="Mendel" data-en="Mendel">Mendel</p>
-                                <p class="text-gray-500 text-sm mb-4" data-es="Jun. 2024 - Presente" data-en="Jun. 2024 - Present">Jun. 2024 - Presente</p>
-                                <p class="text-gray-600 dark:text-gray-300" data-es="Gestión de seguridad especializada con enfoque en PCI DSS, pruebas de penetración y evaluaciones de vulnerabilidades. Implementación de controles de seguridad y cumplimiento normativo para proteger la infraestructura crítica de la organización." data-en="Specialized security management focused on PCI DSS, penetration testing, and vulnerability assessments. Implementation of security controls and regulatory compliance to protect the organization's critical infrastructure.">
-                                    Gestión de seguridad especializada con enfoque en PCI DSS, pruebas de penetración y evaluaciones de vulnerabilidades. Implementación de controles de seguridad y cumplimiento normativo para proteger la infraestructura crítica de la organización.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="hidden md:block w-6 h-6 bg-blue-600 rounded-full border-4 border-white shadow-lg z-10"></div>
-                        <div class="md:w-1/2 md:pl-8"></div>
-                    </div>
-
-                    <!-- Experience 2 -->
-                    <div class="flex flex-col md:flex-row items-center observation-target">
-                        <div class="md:w-1/2 md:pr-8"></div>
-                        <div class="hidden md:block w-6 h-6 bg-blue-600 rounded-full border-4 border-white shadow-lg z-10"></div>
-                        <div class="md:w-1/2 md:pl-8 mb-4 md:mb-0">
-                            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-                                <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-2" data-es="Security Operations Center Analyst" data-en="Security Operations Center Analyst">Security Operations Center Analyst</h3>
-                                <p class="text-blue-600 font-medium mb-2" data-es="Netrix Global" data-en="Netrix Global">Netrix Global</p>
-                                <p class="text-gray-500 text-sm mb-4" data-es="Mar. 2022 - Jun. 2024" data-en="Mar. 2022 - Jun. 2024">Mar. 2022 - Jun. 2024</p>
-                                <p class="text-gray-600 dark:text-gray-300" data-es="Monitoreo 24/7 de eventos de seguridad, análisis de amenazas y respuesta a incidentes. Gestión de herramientas SIEM/SOAR, investigación de alertas de seguridad y cumplimiento de estándares PCI DSS. Coordinación con equipos globales para la mitigación de riesgos." data-en="24/7 security event monitoring, threat analysis, and incident response. Management of SIEM/SOAR tools, security alert investigation, and PCI DSS compliance. Coordination with global teams for risk mitigation.">
-                                    Monitoreo 24/7 de eventos de seguridad, análisis de amenazas y respuesta a incidentes. Gestión de herramientas SIEM/SOAR, investigación de alertas de seguridad y cumplimiento de estándares PCI DSS. Coordinación con equipos globales para la mitigación de riesgos.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="py-20 bg-white dark:bg-gray-800">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-800 dark:text-white mb-4 observation-target" data-es="Habilidades de Ciberseguridad" data-en="Cybersecurity Skills">Habilidades de Ciberseguridad</h2>
-                <div class="w-24 h-1 bg-blue-600 mx-auto mb-8"></div>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Security Operations Skills -->
-                <div class="observation-target">
-                    <div class="bg-gradient-to-br from-red-500 to-red-600 p-6 rounded-xl text-white h-full">
-                        <div class="text-center mb-6">
-                            <i class="fas fa-shield-alt text-4xl mb-4"></i>
-                            <h3 class="text-xl font-semibold" data-es="Operaciones de Seguridad" data-en="Security Operations">Operaciones de Seguridad</h3>
-                        </div>
-                        <div class="space-y-3">
-                            <div class="skill-item" data-skill="95">
-                                <div class="flex justify-between mb-1">
-                                    <span>SIEM/SOAR</span>
-                                    <span class="skill-percentage">95%</span>
-                                </div>
-                                <div class="bg-white bg-opacity-30 rounded-full h-2">
-                                    <div class="bg-white rounded-full h-2 skill-bar" style="width: 0%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item" data-skill="90">
-                                <div class="flex justify-between mb-1">
-                                    <span>Incident Response</span>
-                                    <span class="skill-percentage">90%</span>
-                                </div>
-                                <div class="bg-white bg-opacity-30 rounded-full h-2">
-                                    <div class="bg-white rounded-full h-2 skill-bar" style="width: 0%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item" data-skill="88">
-                                <div class="flex justify-between mb-1">
-                                    <span>Threat Hunting</span>
-                                    <span class="skill-percentage">88%</span>
-                                </div>
-                                <div class="bg-white bg-opacity-30 rounded-full h-2">
-                                    <div class="bg-white rounded-full h-2 skill-bar" style="width: 0%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item" data-skill="85">
-                                <div class="flex justify-between mb-1">
-                                    <span>SOC Operations</span>
-                                    <span class="skill-percentage">85%</span>
-                                </div>
-                                <div class="bg-white bg-opacity-30 rounded-full h-2">
-                                    <div class="bg-white rounded-full h-2 skill-bar" style="width: 0%"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Penetration Testing Skills -->
-                <div class="observation-target">
-                    <div class="bg-gradient-to-br from-purple-500 to-purple-600 p-6 rounded-xl text-white h-full">
-                        <div class="text-center mb-6">
-                            <i class="fas fa-bug text-4xl mb-4"></i>
-                            <h3 class="text-xl font-semibold" data-es="Pentesting & Red Team" data-en="Pentesting & Red Team">Pentesting & Red Team</h3>
-                        </div>
-                        <div class="space-y-3">
-                            <div class="skill-item" data-skill="90">
-                                <div class="flex justify-between mb-1">
-                                    <span>Web2 Pentesting</span>
-                                    <span class="skill-percentage">90%</span>
-                                </div>
-                                <div class="bg-white bg-opacity-30 rounded-full h-2">
-                                    <div class="bg-white rounded-full h-2 skill-bar" style="width: 0%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item" data-skill="85">
-                                <div class="flex justify-between mb-1">
-                                    <span>Web3 Security</span>
-                                    <span class="skill-percentage">85%</span>
-                                </div>
-                                <div class="bg-white bg-opacity-30 rounded-full h-2">
-                                    <div class="bg-white rounded-full h-2 skill-bar" style="width: 0%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item" data-skill="88">
-                                <div class="flex justify-between mb-1">
-                                    <span>OWASP</span>
-                                    <span class="skill-percentage">88%</span>
-                                </div>
-                                <div class="bg-white bg-opacity-30 rounded-full h-2">
-                                    <div class="bg-white rounded-full h-2 skill-bar" style="width: 0%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item" data-skill="82">
-                                <div class="flex justify-between mb-1">
-                                    <span>MITRE ATT&CK</span>
-                                    <span class="skill-percentage">82%</span>
-                                </div>
-                                <div class="bg-white bg-opacity-30 rounded-full h-2">
-                                    <div class="bg-white rounded-full h-2 skill-bar" style="width: 0%"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Compliance & Cloud Security -->
-                <div class="observation-target">
-                    <div class="bg-gradient-to-br from-blue-500 to-blue-600 p-6 rounded-xl text-white h-full">
-                        <div class="text-center mb-6">
-                            <i class="fas fa-cloud-upload-alt text-4xl mb-4"></i>
-                            <h3 class="text-xl font-semibold" data-es="Compliance & Cloud" data-en="Compliance & Cloud">Compliance & Cloud</h3>
-                        </div>
-                        <div class="space-y-3">
-                            <div class="skill-item" data-skill="92">
-                                <div class="flex justify-between mb-1">
-                                    <span>Azure Security</span>
-                                    <span class="skill-percentage">92%</span>
-                                </div>
-                                <div class="bg-white bg-opacity-30 rounded-full h-2">
-                                    <div class="bg-white rounded-full h-2 skill-bar" style="width: 0%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item" data-skill="88">
-                                <div class="flex justify-between mb-1">
-                                    <span>AWS Security</span>
-                                    <span class="skill-percentage">88%</span>
-                                </div>
-                                <div class="bg-white bg-opacity-30 rounded-full h-2">
-                                    <div class="bg-white rounded-full h-2 skill-bar" style="width: 0%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item" data-skill="95">
-                                <div class="flex justify-between mb-1">
-                                    <span>PCI DSS</span>
-                                    <span class="skill-percentage">95%</span>
-                                </div>
-                                <div class="bg-white bg-opacity-30 rounded-full h-2">
-                                    <div class="bg-white rounded-full h-2 skill-bar" style="width: 0%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item" data-skill="85">
-                                <div class="flex justify-between mb-1">
-                                    <span>ISO 27001</span>
-                                    <span class="skill-percentage">85%</span>
-                                </div>
-                                <div class="bg-white bg-opacity-30 rounded-full h-2">
-                                    <div class="bg-white rounded-full h-2 skill-bar" style="width: 0%"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="py-20 bg-gray-50 dark:bg-gray-900">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-800 dark:text-white mb-4 observation-target" data-es="Proyectos de Seguridad" data-en="Security Projects">Proyectos de Seguridad</h2>
-                <div class="w-24 h-1 bg-blue-600 mx-auto mb-8"></div>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Project 1 -->
-                <div class="observation-target">
-                    <div class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                        <div class="h-48 bg-gradient-to-br from-red-400 to-red-600 flex items-center justify-center">
-                            <i class="fas fa-shield-alt text-6xl text-white"></i>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-3" data-es="SOC Automation Platform" data-en="SOC Automation Platform">SOC Automation Platform</h3>
-                            <p class="text-gray-600 dark:text-gray-300 mb-4" data-es="Plataforma automatizada para operaciones de SOC con integración SIEM/SOAR, detección de amenazas en tiempo real y respuesta automatizada a incidentes." data-en="Automated platform for SOC operations with SIEM/SOAR integration, real-time threat detection, and automated incident response.">
-                                Plataforma automatizada para operaciones de SOC con integración SIEM/SOAR, detección de amenazas en tiempo real y respuesta automatizada a incidentes.
-                            </p>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="bg-red-100 text-red-800 px-2 py-1 rounded text-sm">SIEM</span>
-                                <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm">Python</span>
-                                <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-sm">SOAR</span>
-                            </div>
-                            <div class="flex space-x-4">
-                                <a href="#" class="text-blue-600 hover:text-blue-800 transition-colors duration-300">
-                                    <i class="fas fa-external-link-alt mr-1"></i>
-                                    <span data-es="Demo" data-en="Demo">Demo</span>
-                                </a>
-                                <a href="#" class="text-gray-600 hover:text-gray-800 transition-colors duration-300">
-                                    <i class="fab fa-github mr-1"></i>
-                                    <span data-es="Código" data-en="Code">Código</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 2 -->
-                <div class="observation-target">
-                    <div class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                        <div class="h-48 bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center">
-                            <i class="fas fa-bug text-6xl text-white"></i>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-3" data-es="Web3 Penetration Testing Suite" data-en="Web3 Penetration Testing Suite">Web3 Penetration Testing Suite</h3>
-                            <p class="text-gray-600 dark:text-gray-300 mb-4" data-es="Suite completa de herramientas para pruebas de penetración en aplicaciones Web3, smart contracts y protocolos DeFi con análisis de vulnerabilidades automatizado." data-en="Complete toolkit for penetration testing Web3 applications, smart contracts, and DeFi protocols with automated vulnerability analysis.">
-                                Suite completa de herramientas para pruebas de penetración en aplicaciones Web3, smart contracts y protocolos DeFi con análisis de vulnerabilidades automatizado.
-                            </p>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-sm">Solidity</span>
-                                <span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-sm">Web3</span>
-                                <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm">Python</span>
-                            </div>
-                            <div class="flex space-x-4">
-                                <a href="#" class="text-blue-600 hover:text-blue-800 transition-colors duration-300">
-                                    <i class="fas fa-external-link-alt mr-1"></i>
-                                    <span data-es="Demo" data-en="Demo">Demo</span>
-                                </a>
-                                <a href="#" class="text-gray-600 hover:text-gray-800 transition-colors duration-300">
-                                    <i class="fab fa-github mr-1"></i>
-                                    <span data-es="Código" data-en="Code">Código</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 3 -->
-                <div class="observation-target">
-                    <div class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                        <div class="h-48 bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center">
-                            <i class="fas fa-cloud-upload-alt text-6xl text-white"></i>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-3" data-es="Cloud Security Assessment Tool" data-en="Cloud Security Assessment Tool">Cloud Security Assessment Tool</h3>
-                            <p class="text-gray-600 dark:text-gray-300 mb-4" data-es="Herramienta de evaluación de seguridad para infraestructuras Azure y AWS, con auditorías automatizadas de compliance PCI DSS e ISO 27001." data-en="Security assessment tool for Azure and AWS infrastructures, with automated PCI DSS and ISO 27001 compliance audits.">
-                                Herramienta de evaluación de seguridad para infraestructuras Azure y AWS, con auditorías automatizadas de compliance PCI DSS e ISO 27001.
-                            </p>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm">Azure</span>
-                                <span class="bg-orange-100 text-orange-800 px-2 py-1 rounded text-sm">AWS</span>
-                                <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-sm">PowerShell</span>
-                            </div>
-                            <div class="flex space-x-4">
-                                <a href="#" class="text-blue-600 hover:text-blue-800 transition-colors duration-300">
-                                    <i class="fas fa-external-link-alt mr-1"></i>
-                                    <span data-es="Demo" data-en="Demo">Demo</span>
-                                </a>
-                                <a href="#" class="text-gray-600 hover:text-gray-800 transition-colors duration-300">
-                                    <i class="fab fa-github mr-1"></i>
-                                    <span data-es="Código" data-en="Code">Código</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Certifications Section -->
-    <section id="certifications" class="py-20 bg-white dark:bg-gray-800">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-800 dark:text-white mb-4 observation-target" data-es="Certificaciones" data-en="Certifications">Certificaciones</h2>
-                <div class="w-24 h-1 bg-blue-600 mx-auto mb-8"></div>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-8">
-                <!-- Microsoft Certification -->
-                <div class="observation-target">
-                    <div class="bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl p-6 text-white transform hover:scale-105 transition-all duration-300">
-                        <div class="flex items-center mb-4">
-                            <div class="w-16 h-16 bg-white rounded-lg flex items-center justify-center mr-4">
-                                <i class="fab fa-microsoft text-blue-600 text-2xl"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-semibold" data-es="Microsoft Certified" data-en="Microsoft Certified">Microsoft Certified</h3>
-                                <p class="text-blue-100 text-sm" data-es="Security, Compliance, and Identity Fundamentals" data-en="Security, Compliance, and Identity Fundamentals">Security, Compliance, and Identity Fundamentals</p>
-                            </div>
-                        </div>
-                        <div class="space-y-2">
-                            <p class="text-sm"><strong data-es="Expedición:" data-en="Issued:">Expedición:</strong> <span data-es="Marzo 2024" data-en="March 2024">Marzo 2024</span></p>
-                            <p class="text-sm"><strong>ID:</strong> B2F455B7707FC331</p>
-                            <div class="mt-4">
-                                <a href="#" class="inline-flex items-center bg-white text-blue-600 px-4 py-2 rounded-lg hover:bg-blue-50 transition-colors duration-300">
-                                    <i class="fas fa-external-link-alt mr-2"></i>
-                                    <span data-es="Ver Credencial" data-en="View Credential">Ver Credencial</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- ISC2 Certification -->
-                <div class="observation-target">
-                    <div class="bg-gradient-to-br from-green-500 to-green-600 rounded-xl p-6 text-white transform hover:scale-105 transition-all duration-300">
-                        <div class="flex items-center mb-4">
-                            <div class="w-16 h-16 bg-white rounded-lg flex items-center justify-center mr-4">
-                                <i class="fas fa-shield-alt text-green-600 text-2xl"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-semibold" data-es="ISC2 Candidate" data-en="ISC2 Candidate">ISC2 Candidate</h3>
-                                <p class="text-green-100 text-sm" data-es="Certificación Internacional de Seguridad" data-en="International Security Certification">Certificación Internacional de Seguridad</p>
-                            </div>
-                        </div>
-                        <div class="space-y-2">
-                            <p class="text-sm"><strong data-es="Expedición:" data-en="Issued:">Expedición:</strong> <span data-es="Abril 2024" data-en="April 2024">Abril 2024</span></p>
-                            <p class="text-sm"><strong data-es="Vencimiento:" data-en="Expires:">Vencimiento:</strong> <span data-es="Abril 2025" data-en="April 2025">Abril 2025</span></p>
-                            <div class="mt-4">
-                                <a href="#" class="inline-flex items-center bg-white text-green-600 px-4 py-2 rounded-lg hover:bg-green-50 transition-colors duration-300">
-                                    <i class="fas fa-external-link-alt mr-2"></i>
-                                    <span data-es="Ver Credencial" data-en="View Credential">Ver Credencial</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Additional Certifications -->
-            <div class="mt-12 grid md:grid-cols-3 gap-6">
-                <div class="observation-target text-center">
-                    <div class="bg-gray-100 dark:bg-gray-700 rounded-lg p-6 hover:shadow-lg transition-all duration-300">
-                        <i class="fas fa-award text-4xl text-blue-600 mb-4"></i>
-                        <h4 class="font-semibold text-gray-800 dark:text-white mb-2" data-es="PCI DSS Certified" data-en="PCI DSS Certified">PCI DSS Certified</h4>
-                        <p class="text-gray-600 dark:text-gray-300 text-sm" data-es="Estándares de Seguridad de Datos" data-en="Data Security Standards">Estándares de Seguridad de Datos</p>
-                    </div>
-                </div>
-                
-                <div class="observation-target text-center">
-                    <div class="bg-gray-100 dark:bg-gray-700 rounded-lg p-6 hover:shadow-lg transition-all duration-300">
-                        <i class="fas fa-certificate text-4xl text-purple-600 mb-4"></i>
-                        <h4 class="font-semibold text-gray-800 dark:text-white mb-2" data-es="NIST Framework" data-en="NIST Framework">NIST Framework</h4>
-                        <p class="text-gray-600 dark:text-gray-300 text-sm" data-es="Especialización en Marco NIST" data-en="NIST Framework Specialization">Especialización en Marco NIST</p>
-                    </div>
-                </div>
-                
-                <div class="observation-target text-center">
-                    <div class="bg-gray-100 dark:bg-gray-700 rounded-lg p-6 hover:shadow-lg transition-all duration-300">
-                        <i class="fas fa-graduation-cap text-4xl text-red-600 mb-4"></i>
-                        <h4 class="font-semibold text-gray-800 dark:text-white mb-2" data-es="MITRE ATT&CK" data-en="MITRE ATT&CK">MITRE ATT&CK</h4>
-                        <p class="text-gray-600 dark:text-gray-300 text-sm" data-es="Framework de Tácticas y Técnicas" data-en="Tactics and Techniques Framework">Framework de Tácticas y Técnicas</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-white dark:bg-gray-800">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-800 dark:text-white mb-4 observation-target" data-es="Contacto" data-en="Contact">Contacto</h2>
-                <div class="w-24 h-1 bg-blue-600 mx-auto mb-8"></div>
-                <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto" data-es="¿Tienes un proyecto en mente? Me encantaría escuchar tus ideas y colaborar contigo." data-en="Do you have a project in mind? I'd love to hear your ideas and collaborate with you.">
-                    ¿Tienes un proyecto en mente? Me encantaría escuchar tus ideas y colaborar contigo.
-                </p>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-12">
-                <!-- Contact Info -->
-                <div class="observation-target">
-                    <h3 class="text-2xl font-semibold text-gray-800 dark:text-white mb-6" data-es="Información de Contacto" data-en="Contact Information">Información de Contacto</h3>
                     <div class="space-y-6">
-                        <div class="flex items-center">
-                            <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mr-4">
-                                <i class="fas fa-envelope text-white"></i>
-                            </div>
-                            <div>
-                                <p class="font-medium text-gray-800 dark:text-white">Email</p>
-                                <p class="text-gray-600 dark:text-gray-300">sebastian.lopez@example.com</p>
-                            </div>
-                        </div>
-                        <div class="flex items-center">
-                            <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mr-4">
-                                <i class="fas fa-phone text-white"></i>
-                            </div>
-                            <div>
-                                <p class="font-medium text-gray-800 dark:text-white" data-es="Teléfono" data-en="Phone">Teléfono</p>
-                                <p class="text-gray-600 dark:text-gray-300">+54 (11) 1234-5678</p>
-                            </div>
-                        </div>
-                        <div class="flex items-center">
-                            <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mr-4">
-                                <i class="fas fa-map-marker-alt text-white"></i>
-                            </div>
-                            <div>
-                                <p class="font-medium text-gray-800 dark:text-white" data-es="Ubicación" data-en="Location">Ubicación</p>
-                                <p class="text-gray-600 dark:text-gray-300" data-es="Buenos Aires, Argentina" data-en="Buenos Aires, Argentina">Buenos Aires, Argentina</p>
-                            </div>
-                        </div>
+                        <p class="text-gray-300 leading-relaxed font-mono text-sm" 
+                           data-es="Especialista en ciberseguridad con amplia experiencia en SIEM, SOAR y seguridad en Azure/AWS. Mi misión es proteger sistemas de información mediante detección proactiva de amenazas y gestión de riesgos avanzada." 
+                           data-en="Cybersecurity specialist with extensive experience in SIEM, SOAR, and Azure/AWS security. My mission is to protect information systems through proactive threat detection and advanced risk management.">
+                            <span class="text-neon-green">&gt;</span> Cybersecurity specialist with extensive experience in SIEM, SOAR, and Azure/AWS security. My mission is to protect information systems through proactive threat detection and advanced risk management.
+                        </p>
+                        <p class="text-gray-300 leading-relaxed font-mono text-sm"
+                           data-es="Experiencia en pentesting Web2/Web3, operaciones Red & Blue Team, y cumplimiento normativo con frameworks NIST, OWASP y MITRE ATT&CK."
+                           data-en="Experience in Web2/Web3 pentesting, Red & Blue Team operations, and regulatory compliance with NIST, OWASP, and MITRE ATT&CK frameworks.">
+                            <span class="text-neon-green">&gt;</span> Experience in Web2/Web3 pentesting, Red & Blue Team operations, and regulatory compliance with NIST, OWASP, and MITRE ATT&CK frameworks.
+                        </p>
                     </div>
-
-                    <!-- Social Links -->
-                    <div class="mt-8">
-                        <h4 class="text-lg font-medium text-gray-800 dark:text-white mb-4" data-es="Redes Sociales" data-en="Social Media">Redes Sociales</h4>
-                        <div class="flex space-x-4">
-                            <a href="https://www.linkedin.com/in/sebastian-lopez-a9040918a/" target="_blank" class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white hover:bg-blue-700 transition-colors duration-300">
-                                <i class="fab fa-linkedin-in"></i>
-                            </a>
-                            <a href="#" target="_blank" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center text-white hover:bg-gray-700 transition-colors duration-300">
-                                <i class="fab fa-github"></i>
-                            </a>
-                            <a href="#" target="_blank" class="w-10 h-10 bg-blue-400 rounded-full flex items-center justify-center text-white hover:bg-blue-500 transition-colors duration-300">
-                                <i class="fab fa-twitter"></i>
-                            </a>
+                    
+                    <!-- Stats with Neon Effect -->
+                    <div class="grid grid-cols-3 gap-4 mt-8">
+                        <div class="text-center bg-black bg-opacity-60 neon-border rounded-lg p-4">
+                            <div class="text-4xl font-bold text-neon-green counter font-mono" data-target="100">0</div>
+                            <div class="text-xs text-gray-400 font-mono" data-es="INCIDENTS_RESOLVED" data-en="INCIDENTS_RESOLVED">INCIDENTS_RESOLVED</div>
+                        </div>
+                        <div class="text-center bg-black bg-opacity-60 neon-border rounded-lg p-4">
+                            <div class="text-4xl font-bold text-neon-blue counter font-mono" data-target="3">0</div>
+                            <div class="text-xs text-gray-400 font-mono" data-es="YEARS_EXPERIENCE" data-en="YEARS_EXPERIENCE">YEARS_EXPERIENCE</div>
+                        </div>
+                        <div class="text-center bg-black bg-opacity-60 neon-border rounded-lg p-4">
+                            <div class="text-4xl font-bold text-neon-purple counter font-mono" data-target="308">0</div>
+                            <div class="text-xs text-gray-400 font-mono" data-es="NETWORK_CONTACTS" data-en="NETWORK_CONTACTS">NETWORK_CONTACTS</div>
                         </div>
                     </div>
                 </div>
-
-                <!-- Contact Form -->
+                
                 <div class="observation-target">
-                    <form class="space-y-6" id="contactForm">
-                        <div>
-                            <label class="block text-gray-700 dark:text-gray-300 font-medium mb-2" data-es="Nombre" data-en="Name">Nombre</label>
-                            <input type="text" class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent bg-white dark:bg-gray-700 text-gray-800 dark:text-white transition-all duration-300" placeholder="Tu nombre" data-placeholder-es="Tu nombre" data-placeholder-en="Your name">
+                    <!-- System Info Panel -->
+                    <div class="bg-black bg-opacity-80 neon-border rounded-lg p-8 relative overflow-hidden">
+                        <div class="scan-line" aria-hidden="true"></div>
+                        <h3 class="text-2xl font-semibold mb-6 text-neon-blue font-mono" 
+                            data-es="SYSTEM_INFO" data-en="SYSTEM_INFO">SYSTEM_INFO</h3>
+                        <div class="space-y-4 font-mono text-sm">
+                            <div class="flex items-center">
+                                <i class="fas fa-terminal mr-3 text-neon-green" aria-hidden="true"></i>
+                                <span class="text-neon-blue">User:</span>
+                                <span class="ml-2 text-white">Sebastian Lopez</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-map-marker-alt mr-3 text-neon-green" aria-hidden="true"></i>
+                                <span class="text-neon-blue">Location:</span>
+                                <span class="ml-2 text-white" data-es="Buenos Aires, Argentina" data-en="Buenos Aires, Argentina">Buenos Aires, Argentina</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-envelope mr-3 text-neon-green" aria-hidden="true"></i>
+                                <span class="text-neon-blue">Email:</span>
+                                <span class="ml-2 text-white">sebastian.lopez@secure.com</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-shield-alt mr-3 text-neon-green" aria-hidden="true"></i>
+                                <span class="text-neon-blue">Clearance:</span>
+                                <span class="ml-2 text-neon-green">AUTHORIZED</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-graduation-cap mr-3 text-neon-green" aria-hidden="true"></i>
+                                <span class="text-neon-blue">Education:</span>
+                                <span class="ml-2 text-white" data-es="Tecnicatura en Informática" data-en="Computer Science Technician">Computer Science Technician</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-certificate mr-3 text-neon-green" aria-hidden="true"></i>
+                                <span class="text-neon-blue">Certs:</span>
+                                <span class="ml-2 text-neon-green">Microsoft Security | ISC2</span>
+                            </div>
                         </div>
-                        <div>
-                            <label class="block text-gray-700 dark:text-gray-300 font-medium mb-2" data-es="Email" data-en="Email">Email</label>
-                            <input type="email" class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent bg-white dark:bg-gray-700 text-gray-800 dark:text-white transition-all duration-300" placeholder="tu@email.com" data-placeholder-es="tu@email.com" data-placeholder-en="your@email.com">
+                        
+                        <!-- System Status -->
+                        <div class="mt-6 p-4 bg-neon-green bg-opacity-10 border border-neon-green rounded">
+                            <div class="flex items-center justify-between">
+                                <span class="text-neon-green font-mono text-sm">SYSTEM STATUS:</span>
+                                <span class="text-neon-green font-mono text-sm animate-pulse">● ACTIVE</span>
+                            </div>
                         </div>
-                        <div>
-                            <label class="block text-gray-700 dark:text-gray-300 font-medium mb-2" data-es="Asunto" data-en="Subject">Asunto</label>
-                            <input type="text" class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent bg-white dark:bg-gray-700 text-gray-800 dark:text-white transition-all duration-300" placeholder="Asunto del mensaje" data-placeholder-es="Asunto del mensaje" data-placeholder-en="Message subject">
-                        </div>
-                        <div>
-                            <label class="block text-gray-700 dark:text-gray-300 font-medium mb-2" data-es="Mensaje" data-en="Message">Mensaje</label>
-                            <textarea rows="5" class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent bg-white dark:bg-gray-700 text-gray-800 dark:text-white transition-all duration-300" placeholder="Tu mensaje..." data-placeholder-es="Tu mensaje..." data-placeholder-en="Your message..."></textarea>
-                        </div>
-                        <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-lg font-medium transition-all duration-300 transform hover:scale-105" data-es="Enviar Mensaje" data-en="Send Message">
-                            Enviar Mensaje
-                        </button>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-800 dark:bg-gray-900 text-white py-8">
-        <div class="max-w-6xl mx-auto px-6 text-center">
-            <p class="mb-4" data-es="© 2025 Sebastian Lopez. Todos los derechos reservados." data-en="© 2025 Sebastian Lopez. All rights reserved.">© 2025 Sebastian Lopez. Todos los derechos reservados.</p>
-            <p class="text-gray-400" data-es="Hecho con ❤️ y mucho café" data-en="Made with ❤️ and lots of coffee">Hecho con ❤️ y mucho café</p>
-        </div>
-    </footer>
-
-    <script>
-        // Language Toggle
-        let currentLang = 'es';
-        const langToggle = document.getElementById('langToggle');
-        const langText = document.getElementById('langText');
-
-        function switchLanguage() {
-            currentLang = currentLang === 'es' ? 'en' : 'es';
-            langText.textContent = currentLang === 'es' ? 'EN' : 'ES';
-            
-            // Update all elements with language data attributes
-            const elements = document.querySelectorAll('[data-es][data-en]');
-            elements.forEach(element => {
-                const text = element.getAttribute(`data-${currentLang}`);
-                if (text) {
-                    element.textContent = text;
-                }
-            });
-
-            // Update placeholders
-            const placeholderElements = document.querySelectorAll('[data-placeholder-es][data-placeholder-en]');
-            placeholderElements.forEach(element => {
-                const placeholder = element.getAttribute(`data-placeholder-${currentLang}`);
-                if (placeholder) {
-                    element.placeholder = placeholder;
-                }
-            });
-
-            // Update HTML lang attribute
-            document.getElementById('html-root').lang = currentLang;
-        }
-
-        langToggle.addEventListener('click', switchLanguage);
-
-        // Dark Mode Toggle
-        const darkModeToggle = document.getElementById('darkModeToggle');
-        const darkModeIcon = document.getElementById('darkModeIcon');
-        let isDarkMode = false;
-
-        function toggleDarkMode() {
-            isDarkMode = !isDarkMode;
-            document.documentElement.classList.toggle('dark', isDarkMode);
-            darkModeIcon.className = isDarkMode ? 'fas fa-sun' : 'fas fa-moon';
-            localStorage.setItem('darkMode', isDarkMode);
-        }
-
-        // Load dark mode preference
-        const savedDarkMode = localStorage.getItem('darkMode');
-        if (savedDarkMode === 'true') {
-            toggleDarkMode();
-        }
-
-        darkModeToggle.addEventListener('click', toggleDarkMode);
-
-        // Smooth scrolling
-        function scrollToSection(sectionId) {
-            document.getElementById(sectionId).scrollIntoView({
-                behavior: 'smooth'
-            });
-        }
-
-        // Add smooth scrolling to all navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href').substring(1);
-                scrollToSection(targetId);
-            });
-        });
-
-        // Intersection Observer for animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-fade-in');
-                    
-                    // Trigger counter animation
-                    const counters = entry.target.querySelectorAll('.counter');
-                    counters.forEach(counter => {
-                        animateCounter(counter);
-                    });
-
-                    // Trigger skill bar animation
-                    const skillBars = entry.target.querySelectorAll('.skill-item');
-                    skillBars.forEach(skillItem => {
-                        animateSkillBar(skillItem);
-                    });
-                }
-            });
-        }, observerOptions);
-
-        // Observe all elements with the observation-target class
-        document.querySelectorAll('.observation-target').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Counter animation
-        function animateCounter(counter) {
-            const target = parseInt(counter.dataset.target);
-            const duration = 2000;
-            const step = target / (duration / 16);
-            let current = 0;
-
-            function updateCounter() {
-                current += step;
-                if (current < target) {
-                    counter.textContent = Math.floor(current);
-                    requestAnimationFrame(updateCounter);
-                } else {
-                    counter.textContent = target;
-                }
-            }
-
-            updateCounter();
-        }
-
-        // Skill bar animation
-        function animateSkillBar(skillItem) {
-            const skillLevel = parseInt(skillItem.dataset.skill);
-            const skillBar = skillItem.querySelector('.skill-bar');
-            
-            setTimeout(() => {
-                skillBar.style.width = skillLevel + '%';
-                skillBar.style.transition = 'width 1.5s ease-out';
-            }, 300);
-        }
-
-        // Contact form handling
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Show success message (you can implement actual form submission here)
-            const submitButton = this.querySelector('button[type="submit"]');
-            const originalText = submitButton.textContent;
-            
-            submitButton.textContent = currentLang === 'es' ? 'Enviando...' : 'Sending...';
-            submitButton.disabled = true;
-            
-            setTimeout(() => {
-                submitButton.textContent = currentLang === 'es' ? '¡Mensaje Enviado!' : 'Message Sent!';
-                submitButton.classList.add('bg-green-600', 'hover:bg-green-700');
-                submitButton.classList.remove('bg-blue-600', 'hover:bg-blue-700');
-                
-                setTimeout(() => {
-                    submitButton.textContent = originalText;
-                    submitButton.disabled = false;
-                    submitButton.classList.remove('bg-green-600', 'hover:bg-green-700');
-                    submitButton.classList.add('bg-blue-600', 'hover:bg-blue-700');
-                    this.reset();
-                }, 2000);
-            }, 1500);
-        });
-
-        // Navbar background on scroll
-        window.addEventListener('scroll', () => {
-            const nav = document.querySelector('nav');
-            if (window.scrollY > 100) {
-                nav.classList.add('bg-white', 'bg-opacity-95', 'backdrop-blur-sm', 'shadow-lg');
-                nav.classList.remove('bg-transparent');
-            } else {
-                nav.classList.remove('bg-white', 'bg-opacity-95', 'backdrop-blur-sm', 'shadow-lg');
-                nav.classList.add('bg-transparent');
-            }
-        });
-
-        // Parallax effect for hero section
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const parallax = document.querySelector('header');
-            const speed = scrolled * 0.5;
-            
-            if (parallax) {
-                parallax.style.transform = `translateY(${speed}px)`;
-            }
-        });
-
-        // Add loading animation
-        window.addEventListener('load', () => {
-            document.body.classList.add('animate-fade-in');
-        });
-
-        // Mobile menu toggle (if you want to add mobile navigation)
-        function toggleMobileMenu() {
-            // Implementation for mobile menu toggle
-            console.log('Mobile menu toggle');
-        }
-
-        // Add typing effect to hero subtitle
-        function typeWriter(element, text, speed = 100) {
-            let i = 0;
-            element.textContent = '';
-            
-            function type() {
-                if (i < text.length) {
-                    element.textContent += text.charAt(i);
-                    i++;
-                    setTimeout(type, speed);
-                }
-            }
-            
-            type();
-        }
-
-        // Initialize typing effect on page load
-        window.addEventListener('load', () => {
-            const heroSubtitle = document.querySelector('header p[data-es]');
-            if (heroSubtitle) {
-                const text = heroSubtitle.textContent;
-                typeWriter(heroSubtitle, text, 50);
-            }
-        });
+    <!-- JavaScript -->
+    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/effects.js"></script>
+    
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Sebastian Lopez",
+        "jobTitle": "Cybersecurity Specialist",
+        "description": "Expert in cybersecurity, threat hunting, penetration testing, and cloud security",
+        "url": "https://sebastianlopez.dev",
+        "sameAs": [
+            "https://www.linkedin.com/in/sebastian-lopez-a9040918a/"
+        ],
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Buenos Aires",
+            "addressCountry": "Argentina"
+        },
+        "knowsAbout": [
+            "Cybersecurity",
+            "SIEM",
+            "SOAR",
+            "Penetration Testing",
+            "Threat Hunting",
+            "Azure Security",
+            "AWS Security",
+            "PCI DSS",
+            "ISO 27001",
+            "NIST Framework",
+            "MITRE ATT&CK"
+        ]
+    }
     </script>
 </body>
 </html>
