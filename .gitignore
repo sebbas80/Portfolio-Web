@@ -148,6 +148,7 @@ secrets.json
 # Local development
 .local/
 local/
+.superpowers/
 
 # Testing
 cypress/videos/
